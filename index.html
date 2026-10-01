@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Екатерина Сысоева — портфолио</title>
+<meta name="description" content="Портфолио Екатерины Сысоевой, backend-разработчика (junior), в виде рабочего стола.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Caveat:wght@500;600&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600&family=Marck+Script&family=PT+Mono&display=swap">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/desktop.css">
+<link rel="stylesheet" href="css/window.css">
+<link rel="stylesheet" href="css/taskbar.css">
+<link rel="stylesheet" href="css/about.css">
+</head>
+<body class="os" data-wall="mountain">
+
+<!-- Рабочий стол: приветствие, папки и окна -->
+<main id="desktop">
+  <section id="clockw" aria-label="Время по Москве">
+    <span class="cw-label">время по москве</span>
+    <time class="cw-time" id="moscow">--:--</time>
+  </section>
+  <section id="hello" aria-label="Екатерина Сысоева">
+    <p class="eyebrow">портфолио · 2026</p>
+    <h1>Екатерина <span class="script">Сысоева</span></h1>
+    <p>backend-разработчик, junior &nbsp;·&nbsp; PHP · Yii2 · MySQL · REST API</p>
+  </section>
+  <ul id="icons" aria-label="Папки"></ul>
+  <div id="windows"></div>
+</main>
+
+<!-- Панель снизу -->
+<footer id="taskbar">
+  <button id="start" type="button" aria-haspopup="true" aria-expanded="false">меню</button>
+  <nav id="tasks" aria-label="Открытые окна"></nav>
+  <div id="tray">
+    <time id="clock"></time>
+  </div>
+  <ul id="startmenu" hidden></ul>
+</footer>
+
+<noscript>
+  <p style="padding:24px;font-family:sans-serif">Для этого сайта нужен JavaScript. Включите его в настройках браузера.</p>
+</noscript>
+
+<!-- Порядок важен: сначала данные и ядро, потом программы -->
+<script src="js/data.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/wm.js"></script>
+<script src="js/taskbar.js"></script>
+<script src="js/desktop.js"></script>
+<script src="js/apps.js"></script>
+<script src="js/terminal.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

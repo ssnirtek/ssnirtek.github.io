@@ -1,0 +1,33 @@
+/* Палитра и общие настройки. Все цвета и шрифты меняются здесь. */
+:root {
+  --paper: #ece7db;          /* кремовая бумага */
+  --paper-2: #e3dccb;
+  --ink: #1d1c1a;
+  --muted: #6b675e;
+  --pink: #f3a6c4;           /* мягкий розовый, как кисть на образцах */
+  --pink-deep: #e2578c;      /* для мелкого текста и ссылок */
+  --rose: #b2303f;
+  --charcoal: #262624;
+
+  --taskbar-h: 44px;
+  --shadow: 0 24px 60px rgba(0,0,0,.45);
+
+  /* лёгкая бумажная зернистость */
+  --grain: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .3  0 0 0 0 .27  0 0 0 0 .22  0 0 0 .09 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+body {
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  font-size: 14.5px; line-height: 1.55; color: var(--ink);
+  overflow: hidden; -webkit-font-smoothing: antialiased; background: #151513;
+  font-variant-numeric: lining-nums;
+}
+a { color: inherit; }
+button { font: inherit; cursor: pointer; }
+h1, h2, h3, .serif { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 600; }
+.script { font-family: "Marck Script", "Caveat", cursive; font-weight: 400; }   /* крупные рукописные слова */
+.note { font-family: "Caveat", "Marck Script", cursive; font-weight: 500; }      /* мелкие рукописные подписи */
+.mono { font-family: "Cascadia Mono", Consolas, monospace; }
+:focus-visible { outline: 2px solid var(--pink-deep); outline-offset: 3px; }

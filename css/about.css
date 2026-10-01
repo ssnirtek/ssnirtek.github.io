@@ -1,0 +1,121 @@
+/* Страница «Обо мне»: белый лист, рукописные надписи маркером, машинописные строки.
+   По мотивам референсов: портфолио иллюстратора (крупное «обо мне», фото и мелкий текст)
+   и CV дизайнера (подписи в скобках, красная рукописная вставка, строки «печатной машинкой»). */
+.win.skin-white { background: #fff; }
+.win.skin-white .win-bar { border-bottom-color: rgba(0,0,0,.12); }
+.win.skin-white .win-body { padding: 0; }
+
+.ab { --black: #111; --red: #d8262c; --gray: #5c5c5c; color: var(--black); padding: 26px clamp(24px, 5vw, 56px) 40px; }
+.ab .hand { font-family: "Amatic SC", "Caveat", cursive; font-weight: 700; text-transform: uppercase; line-height: .85; letter-spacing: .02em; }
+.ab .type { font-family: "PT Mono", "Courier New", monospace; font-size: 13px; line-height: 1.55; letter-spacing: .04em; text-transform: uppercase; }
+
+/* --- шапка с именем, буквы «разбросаны» как в CV --- */
+.ab-head { position: relative; display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; min-height: 130px; }
+.ab-name { position: relative; }
+.ab-name .first { position: absolute; left: 46%; top: -12px; font-size: clamp(42px, 6vw, 70px); transform: rotate(-7deg); }
+.ab-name .last { display: block; font-size: clamp(76px, 12vw, 138px); padding-top: 26px; }
+.ab-tag { position: relative; margin-bottom: 22px; }
+.ab-tag svg { position: absolute; inset: -14px -22px; width: calc(100% + 44px); height: calc(100% + 28px); overflow: visible; }
+.ab-tag svg path { fill: none; stroke: var(--black); stroke-width: 2.4; stroke-linecap: round; }
+.ab-tag span { position: relative; font-size: 44px; }
+.ab-year { font-size: 12px; letter-spacing: .14em; text-align: right; margin-top: 6px; }
+
+/* --- «обо мне»: фото слева, мелкий серый текст справа (как у иллюстратора) --- */
+.ab-about { display: grid; grid-template-columns: minmax(180px, 38%) 1fr; gap: clamp(22px, 4vw, 48px); margin-top: 38px; align-items: start; }
+.ab-photo { margin: 0; }
+.ab-photo img { display: block; width: 100%; height: auto; filter: grayscale(1) contrast(1.06); transition: filter .4s; }
+.ab-photo:hover img { filter: none; }
+.ab-about h2 { font-family: "Amatic SC", cursive; font-weight: 700; font-size: clamp(44px, 6.5vw, 76px); line-height: .9; margin: 0 0 18px; text-transform: uppercase; letter-spacing: .03em; }
+.ab-about p { font-size: 13.5px; line-height: 1.7; color: var(--gray); margin: 0 0 14px; font-weight: 400; }
+.ab-about a { color: var(--black); text-decoration: underline; text-underline-offset: 3px; }
+.ab-about a:hover { color: var(--red); }
+
+/* --- CV-блок --- */
+.ab-hi { text-align: center; margin: 56px 0 12px; }
+.ab-hi .t { font: 700 13px/1 "Inter", sans-serif; letter-spacing: .16em; text-transform: uppercase; }
+.ab-hi .sign { display: block; font-family: "Marck Script", "Caveat", cursive; font-size: clamp(42px, 7vw, 76px); color: var(--pink); line-height: 1; margin-top: 4px; transform: rotate(-5deg); }
+
+.ab-tl { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 34px; margin: 36px auto 0; max-width: 720px; }
+.ab-tl .row { display: grid; grid-template-columns: 7.5em 1fr; gap: 10px; }
+.ab-tl .yr { text-align: right; }
+.ab-tl .col { display: grid; gap: 14px; align-content: start; }
+.ab-tl b { font-weight: 400; }
+.ab-tl .sub { color: var(--gray); }
+
+.ab-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 18px 22px; margin-top: 52px; }
+.ab-cols h3 { font: 400 13px/1.4 "PT Mono", monospace; letter-spacing: .06em; margin: 0 0 12px; text-transform: uppercase; }
+.ab-cols ul { list-style: none; margin: 0; padding: 0; }
+.ab-cols li { margin: 0 0 6px; }
+.ab-cols li a, .ab-cols li button { all: unset; cursor: pointer; }
+.ab-cols li a:hover, .ab-cols li button:hover { color: var(--red); }
+
+.ab-foot { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; margin-top: 56px; font-family: "Caveat", cursive; font-size: 21px; letter-spacing: .02em; }
+.ab-foot a { text-decoration: none; }
+.ab-foot a:hover { color: var(--red); text-decoration: underline; }
+
+@media (max-width: 720px) {
+  .ab-head { flex-direction: column; align-items: flex-start; }
+  .ab-about { grid-template-columns: 1fr; }
+  .ab-tl { grid-template-columns: 1fr; }
+  .ab-cols { grid-template-columns: 1fr 1fr; }
+}
+
+
+/* ==== Остальные «листы» (проекты, навыки, опыт, контакты) в том же стиле ==== */
+.ab .pk { font-family: "Marck Script", "Caveat", cursive; font-weight: 400; text-transform: none; color: var(--pink); display: inline-block; transform: rotate(-4deg); margin-left: .06em; }
+.sh-head { margin-bottom: 14px; }
+.sh-kick { color: var(--gray); font-size: 12px; margin: 0 0 8px; }
+.sh-title { font-size: clamp(54px, 8vw, 92px); margin: 0; }
+.sh-stack { font-size: 12.5px; color: var(--gray); margin: 6px 0 20px; }
+.sh-text { font-size: 14px; line-height: 1.7; color: var(--gray); max-width: 38em; margin: 6px 0 14px; }
+.sh-sub { font-size: 40px; text-transform: uppercase; margin: 30px 0 10px; font-weight: 700; }
+.sh-hint { font-size: 20px; color: var(--gray); margin: 18px 0 0; }
+.sh-list { margin: 8px 0 0; padding-left: 0; list-style: none; max-width: 44em; }
+.sh-list li { position: relative; padding-left: 18px; margin: 0 0 10px; font-size: 13.5px; line-height: 1.7; color: var(--gray); }
+.sh-list li::before { content: "—"; position: absolute; left: 0; color: var(--black); }
+.sh-stage { background: #efefef; padding: 18px 18px 0; display: flex; gap: 14px; align-items: flex-end; justify-content: center; margin-top: 4px; }
+.sh-stage img { max-width: 100%; height: auto; display: block; }
+.sh-stage .phone { max-height: 250px; width: auto; }
+.sh-facts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 26px 0 20px; }
+.sh-facts div { border-top: 1px solid var(--black); padding-top: 8px; }
+.sh-facts b { display: block; font-size: 64px; line-height: .85; font-weight: 700; }
+.sh-facts span { display: block; font-size: 11.5px; color: var(--gray); margin-top: 6px; }
+.sh-gal { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.sh-gal a { display: block; border: 1px solid var(--black); background: #fff; }
+.sh-gal img { display: block; width: 100%; height: auto; filter: grayscale(1) contrast(1.04); transition: filter .3s; }
+.sh-gal a:hover img { filter: none; }
+.sh-api { background: #f6f6f6; padding: 16px 18px; font-size: 13px; line-height: 1.9; }
+.sh-api[style*="pre"] { text-transform: none; letter-spacing: 0; }
+.sh-api .pk-m { color: #e86a9a; font-weight: 700; }
+.sh-files { list-style: none; margin: 22px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(112px, 1fr)); gap: 16px 8px; }
+.skin-white .file { color: var(--black); }
+.skin-white .file .label { font: 400 12px/1.2 "PT Mono", monospace; letter-spacing: .05em; text-transform: uppercase; font-style: normal; }
+.skin-white .file .note { color: #e86a9a; font-size: 18px; }
+.skin-white .file:hover, .skin-white .file:focus-visible { background: rgba(243,166,196,.2); }
+.sh-cols { margin-top: 28px; }
+.sh-tl { display: grid; gap: 18px; margin-top: 26px; max-width: 700px; }
+.sh-tl .row { display: grid; grid-template-columns: 9.5em 1fr; gap: 14px; }
+.sh-tl .yr { text-align: right; }
+.sh-tl b { font-weight: 400; }
+.sh-tl .sub { color: var(--gray); margin: 4px 0 0; font-size: 12px; line-height: 1.5; }
+.sh-contacts { list-style: none; margin: 22px 0 0; padding: 0; display: grid; gap: 12px; }
+.sh-contacts li { display: grid; grid-template-columns: 8em 1fr; gap: 12px; align-items: baseline; }
+.sh-contacts span { color: var(--gray); }
+.sh-contacts a { color: var(--black); text-underline-offset: 3px; text-transform: none; }
+.sh-contacts a:hover { color: #e86a9a; }
+.sh-contacts b { font-weight: 400; }
+@media (max-width: 720px) {
+  .sh-facts { grid-template-columns: 1fr 1fr; } .sh-gal { grid-template-columns: 1fr 1fr; }
+  .sh-tl .row { grid-template-columns: 1fr; gap: 2px; } .sh-tl .yr { text-align: left; }
+  .sh-contacts li { grid-template-columns: 1fr; gap: 2px; }
+}
+
+/* окно приложения (скриншот) в рамке «рабочего стола» */
+.sh-win { padding: 14px; background: #efefef; display: block; }
+.sh-win img { width: 100%; border: 1px solid var(--black); }
+
+/* кейсы Figma: макеты крупно, по две в ряд */
+.sh-fig { grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 16px; margin-top: 8px; }
+.sh-fig a { border: 0; background: transparent; box-shadow: 0 6px 18px rgba(0,0,0,.14); }
+.sh-fig img { filter: none; }
+@media (max-width: 720px) { .sh-fig { grid-template-columns: 1fr; } }
