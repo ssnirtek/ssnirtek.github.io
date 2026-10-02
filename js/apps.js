@@ -86,7 +86,7 @@
       body.innerHTML = '<div class="ab">' + head('проекты', 'Что я', 'делала') + '<ul class="files sh-files"></ul>' +
         '<p class="note sh-hint">дважды нажмите на папку, чтобы открыть</p></div>';
       const ul = body.querySelector('.files');
-      D.projects.forEach((p, i) => {
+      D.projects.filter((p) => !p.hidden).forEach((p, i) => {
         const li = document.createElement('li');
         const b = document.createElement('button');
         b.type = 'button'; b.className = 'file'; b.title = p.sub;
@@ -142,6 +142,28 @@
         '<section class="ab-cols type sh-cols"><div><h3>[таблицы]</h3><ul>' + dotted(g.tables) + '</ul></div>' +
         '<div style="grid-column: span 2"><h3>[запрос]</h3><div class="sh-api" style="white-space:pre">' + esc(g.code) + '</div></div></section>' +
         '<p class="type sh-stack" style="margin-top:22px">[ <a href="https://github.com/' + D.owner.github + '/gift" target="_blank" rel="noopener">github.com/' + esc(D.owner.github) + '/gift</a> ]</p></div>';
+    },
+  });
+
+  /* ---------- ИИ: опыт работы с нейросетями ---------- */
+  OS.apps.register({
+    id: 'ai', title: 'ИИ', desktop: false, skin: 'white', size: { w: 900, h: 720 },
+    render(body) {
+      const fig = (s) => '<figure class="ai-shot' + (s.wide ? ' wide' : '') + '"><a href="assets/ai/' + s.src + '.jpg" target="_blank" rel="noopener" title="' + esc(s.title) + '">' +
+        '<img src="assets/ai/' + s.src + '.jpg" alt="' + esc(s.title) + '" loading="lazy"></a><figcaption class="type">' + esc(s.title) + '</figcaption></figure>';
+      const shots = D.aiShots.map(fig);
+      // последняя картинка стоит в паре с примером запроса
+      const last = shots.pop();
+      const gallery = '<h3 class="hand sh-sub">Магазин глазами нейросети</h3>' +
+        '<p class="sh-text">Как мог бы выглядеть магазин из моего диплома в жизни. Картинки сгенерированы нейросетью Gemini по моим запросам: я задавала фирменные цвета (графит, нежно-розовый, травяной зелёный), материалы и ракурсы, потом правила результат, пока он не совпал с задумкой. Это не фотографии: магазин пока существует только на сайте.</p>' +
+        '<div class="ai-gal">' + shots.join('') + last +
+        '<div class="ai-prompt-box"><h3>[пример запроса]</h3><p class="sh-api ai-prompt">' + esc(D.aiPrompt) + '</p></div></div>';
+      const items = D.ai.map((c) => '<li><b class="type">' + esc(c.title).toUpperCase() + '</b>' +
+        (c.tools ? '<span class="type sh-stack" style="display:block;margin:2px 0 4px">[ ' + c.tools.map((t) => esc(t).toUpperCase()).join(' · ') + ' ]</span>' : '') +
+        '<span>' + esc(c.what) + '</span>' + (c.result ? '<br><span style="color:var(--black)">Результат: ' + esc(c.result) + '</span>' : '') + '</li>').join('');
+      body.innerHTML = '<div class="ab">' + head('нейросети и автоматизация', 'Работа с', 'ИИ') +
+        (items ? '<ul class="sh-list" style="margin-top:18px">' + items + '</ul>' : '<p class="sh-text">Здесь будут проекты, в которых я использовала нейросети.</p>') +
+        gallery + '</div>';
     },
   });
 

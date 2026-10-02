@@ -39,6 +39,7 @@ OS.data = {
     { id: 'pets', title: 'Pets', icon: '🐾', art: 'assets/art/p-lamb.jpg', tab: 'left', note: 'react', sub: 'Поиск потерянных животных', stack: ['React 18'],
       text: 'Карточки, поиск, личный кабинет. Учебная практика по дизайну веб-приложений.' },
     { id: 'figma', title: 'Дизайн в Figma', label: 'figma', icon: '🎨', art: 'assets/art/p-flowers.jpg', tab: 'left', note: 'макеты', sub: 'Учебные макеты сайтов и инфографика', stack: ['Figma', 'Auto Layout', 'прототипы'] },
+    { id: 'ai', title: 'ИИ', label: 'ии', icon: '✨', art: 'assets/art/night.jpg', tab: 'long', note: 'нейросети', sub: 'Работа с нейросетями и автоматизация', stack: ['ИИ-ассистенты', 'промпты', 'автоматизация'] },
     { id: 'gift', title: 'Gift Selector', label: 'подарки', icon: '🎁', art: 'assets/art/p-stars.jpg', tab: 'right', note: 'c# · sql', sub: 'Приложение для подбора подарков · курсовой проект, 2025', stack: ['C#', 'WinForms', 'MS SQL Server', 'ADO.NET'] },
     { id: 'hospital', title: 'Больница и магазин', label: 'больница', icon: '🏥', art: 'assets/art/p-cat.jpg', tab: 'left', note: 'winforms', sub: 'Учебные приложения · WinForms + SQL Server', stack: ['C#', 'WinForms', 'SQL Server'],
       text: 'Регистратура больницы (пациенты, отделения, палаты, процедуры) и учебное приложение для магазина. Работа с базой через ADO.NET.' },
@@ -69,6 +70,26 @@ OS.data = {
     tables: ['users', 'event_s', 'gifts', 'eventGifts', 'category', 'giftReviews', 'gift_collections', 'collection_items', 'giftExpenseTracking'],
     code: 'SELECT eventID, eventName, eventDate\nFROM event_s\nWHERE id_user = @userId\n  AND eventName LIKE @search',
   },
+
+  // Кейсы по работе с ИИ. Формат записи:
+  // { title: 'Название', tools: ['Claude', ...], what: 'Что сделала', result: 'Что получилось' }
+  ai: [
+    { title: 'Оптимизация кода сайта Bijouterie.ss', tools: ['Cursor', 'clean-css', 'Prettier'],
+      what: 'Оптимизировала код дипломного сайта в ИИ-редакторе Cursor. Привела стили в порядок: токены дизайна (палитра в одном файле), форматирование Prettier и сжатие стилей скриптом clean-css. Всего 17 файлов стилей.',
+      result: 'единые цвета во всём проекте, а сжатие стилей запускается одной командой npm run minify-css' },
+    { title: 'Настройка ИИ-ассистента под свои задачи', tools: ['ChatGPT', 'Claude', 'Gemini', 'DeepSeek'],
+      what: 'Настраивала ИИ-ассистента под свои задачи: инструкции, формат ответов. Создала собственного ассистента (Custom GPT) на основе своих материалов. Подбирала запросы (промпты), проверяла и улучшала результат.' },
+  ],
+
+  // Картинки магазина, сгенерированные нейросетью (assets/ai/<src>.jpg). wide: true: на всю ширину ряда
+  aiShots: [
+    { src: 'shop-interior', title: 'Зал: вывеска и витрина', wide: true },
+    { src: 'shop-facade', title: 'Фасад: объёмная вывеска', wide: true },
+    { src: 'shop-hall', title: 'Вид от входа' },
+    { src: 'shop-wall', title: 'Настенная экспозиция' },
+    { src: 'shop-pack', title: 'Касса и упаковка' },
+  ],
+  aiPrompt: 'Новое изображение того же магазина, другой ракурс: средний план настенной экспозиции. Ореховая панель, на латунных штангах серьги-капли и колье из цветного бисера. Тёплый боковой свет, терракотовый пол. Фотореализм, без людей, без надписей.',
 
   figma: [
     { id: 'fg-plant', dir: 'plant', title: 'Plant', label: 'plant', note: 'магазин растений', art: 'assets/art/p-flowers.jpg', tab: 'right',

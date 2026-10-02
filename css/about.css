@@ -119,3 +119,17 @@
 .sh-fig a { border: 0; background: transparent; box-shadow: 0 6px 18px rgba(0,0,0,.14); }
 .sh-fig img { filter: none; }
 @media (max-width: 720px) { .sh-fig { grid-template-columns: 1fr; } }
+
+/* ИИ: картинки магазина. Крупные кадры на всю ширину, остальные по два в ряд, цвет сразу (это не скриншоты, а «фото») */
+.ai-gal { display: grid; grid-template-columns: 1fr 1fr; gap: 22px 16px; margin-top: 12px; align-items: start; }
+.ai-shot { margin: 0; }
+.ai-shot.wide { grid-column: 1 / -1; }
+.ai-shot a { display: block; box-shadow: 0 6px 18px rgba(0,0,0,.14); }
+.ai-shot img { display: block; width: 100%; height: auto; transition: transform .35s; }
+.ai-shot a { overflow: hidden; }
+.ai-shot a:hover img { transform: scale(1.025); }
+.ai-shot figcaption { font-size: 11.5px; color: var(--gray); margin-top: 8px; }
+.ai-prompt-box { align-self: center; }
+.ai-prompt-box h3 { font: 400 13px/1.4 "PT Mono", monospace; letter-spacing: .06em; margin: 0 0 12px; text-transform: uppercase; }
+.ai-prompt { text-transform: none; letter-spacing: 0; font-size: 12.5px; line-height: 1.8; margin: 0; }
+@media (max-width: 720px) { .ai-gal { grid-template-columns: 1fr; } }
