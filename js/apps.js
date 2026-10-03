@@ -220,9 +220,13 @@
   /* ---------- Остальные проекты (общий шаблон) ---------- */
   D.projects.filter((p) => p.text).forEach((p) => {
     OS.apps.register({
-      id: p.id, title: p.title, desktop: false, skin: 'white', size: { w: 560, h: 380 },
+      id: p.id, title: p.title, desktop: false, skin: 'white', size: p.shots || p.points ? { w: 860, h: 700 } : { w: 560, h: 380 },
       render(body) {
-        body.innerHTML = '<div class="ab">' + head(p.sub, p.title) + bracket(p.stack) + '<p class="sh-text">' + esc(p.text) + '</p></div>';
+        const gh = p.repo ? '<p class="proj-links"><a class="hb-lite" href="https://github.com/' + D.owner.github + '/' + p.repo + '" target="_blank" rel="noopener">код на GitHub</a></p>' : '';
+        body.innerHTML = '<div class="ab">' + head(p.sub, p.title) + bracket(p.stack) + '<p class="sh-text">' + esc(p.text) + '</p>' +
+          (p.points ? '<ul class="sh-list">' + p.points.map((t) => '<li>' + esc(t) + '</li>').join('') + '</ul>' : '') + gh +
+          (p.shots ? '<div class="sh-gal sh-fig proj-gal">' + p.shots.map((s) => '<figure><a href="assets/projects/' + s.src + '.jpg" target="_blank" rel="noopener"><img src="assets/projects/' + s.src + '.jpg" alt="' + esc(s.cap) + '" loading="lazy"></a><figcaption class="type">' + esc(s.cap) + '</figcaption></figure>').join('') + '</div>' : '') +
+          (p.note2 ? '<p class="note sh-hint">' + esc(p.note2) + '</p>' : '') + '</div>';
       },
     });
   });

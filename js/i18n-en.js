@@ -258,7 +258,28 @@
  "версия 2026 · сборка вручную": "version 2026 · built by hand",
  "Редактор": "Editor",
  "скачать резюме": "download resume",
- "написать": "write to me"
+ "написать": "write to me",
+ "код на GitHub": "code on GitHub",
+ "Список объявлений карточками, страница животного с подробностями и поиск по объявлениям.": "Listings as cards, a page for each animal with details, and a search through the listings.",
+ "Регистрация, вход и личный кабинет: свои объявления и данные профиля.": "Sign-up, sign-in and a personal account: my own listings and profile data.",
+ "Форма добавления объявления, раздел найденных питомцев, адаптивная вёрстка с мобильным меню.": "A form for adding a listing, a section for found pets, responsive layout with a mobile menu.",
+ "Маршруты на React Router, компоненты на React-Bootstrap.": "Routes with React Router, components with React-Bootstrap.",
+ "Данные приходили с учебного API колледжа, которого сейчас нет в сети, поэтому живого демо нет. Скриншоты из моей презентации по проекту.": "The data came from the college's study API, which is no longer online, so there is no live demo. The screenshots are from my presentation of the project.",
+ "Главная: шапка, поиск и найденные животные": "Home: header, search and found animals",
+ "Личный кабинет": "Personal account",
+ "Пять окон: отделения, палаты, пациенты, процедуры и выписанные больные. База hospital_registry на SQL Server: таблицы departments, room, patients, procedur и patient_proc со связями.": "Five windows: departments, wards, patients, procedures and discharged patients. The hospital_registry database on SQL Server: the tables departments, room, patients, procedur and patient_proc with relations.",
+ "Добавление и удаление записей, выпадающие списки отделений и палат из базы.": "Adding and deleting records, drop-down lists of departments and wards loaded from the database.",
+ "Отчёты запросами с JOIN: процедуры каждого больного, палаты по отделениям, выписанные за выбранный период.": "Reports with JOIN queries: procedures of each patient, wards by department, patients discharged in the chosen period.",
+ "Все запросы параметризованные (@параметры), а не склеенные из строк.": "All queries are parameterised (@parameters), not glued together from strings.",
+ "Скриншоты сделаны на демонстрационной базе: все данные вымышленные.": "The screenshots were taken on a demo database: all the data is made up.",
+ "Главное окно": "Main window",
+ "Пациенты": "Patients",
+ "Процедуры и отчёт по больным": "Procedures and a report on patients",
+ "Отделения": "Departments",
+ "Справочники: марки, классы, категории и автомобили (цена за день, цвет, год, номер, свободна ли машина).": "Reference tables: brands, classes, categories and cars (price per day, colour, year, plate number, whether the car is free).",
+ "Заявки на аренду и отчёты пользователей, связи между таблицами на уровне базы.": "Rental requests and user reports, relations between tables enforced in the database.",
+ "Управление пользователями и вход; CRUD по всем сущностям с поиском и фильтрами (search-модели Yii2).": "User management and sign-in; CRUD for all entities with search and filters (Yii2 search models).",
+ "Мобильное меню": "Mobile menu"
 });
   OS.i18n.translateData();
 })();

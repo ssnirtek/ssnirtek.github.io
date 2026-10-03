@@ -133,3 +133,13 @@
 .ai-prompt-box h3 { font: 400 13px/1.4 var(--f-mono); letter-spacing: .06em; margin: 0 0 12px; text-transform: uppercase; }
 .ai-prompt { text-transform: none; letter-spacing: 0; font-size: 12.5px; line-height: 1.8; margin: 0; }
 @media (max-width: 720px) { .ai-gal { grid-template-columns: 1fr; } }
+
+/* окна проектов со скриншотами */
+.proj-gal { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); margin-top: 18px; }
+.proj-gal figure { margin: 0; }
+.proj-gal a { display: block; }
+.proj-gal figcaption { font-size: 11.5px; color: var(--gray); margin-top: 8px; }
+.proj-links { margin: 14px 0 0; }
+.hb-lite { display: inline-block; padding: 6px 16px 4px; font: 700 21px/1 var(--f-hand); letter-spacing: .06em; text-transform: uppercase; text-decoration: none; color: var(--black); background: var(--pink); transform: rotate(-1deg); transition: transform .2s; }
+.hb-lite:hover { transform: rotate(0) translateY(-2px); }
+.hb-lite::after { content: " ↗"; }
