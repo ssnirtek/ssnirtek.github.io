@@ -265,7 +265,7 @@
     render(body) {
       const o = D.owner;
       body.innerHTML = '<div class="ab">' + head('контакты', 'Напишите', 'мне') +
-        '<p class="sh-text">Ищу первую работу backend-разработчиком. Пишите в Telegram или на почту, отвечу быстро.</p>' +
+        '<p class="sh-text">Рассматриваю позиции backend-разработчика. Пишите в Telegram или на почту, отвечу быстро.</p>' +
         '<ul class="sh-contacts type">' +
           '<li><span>[telegram]</span><a href="https://t.me/' + o.telegram + '" target="_blank" rel="noopener">@' + esc(o.telegram) + '</a></li>' +
           '<li><span>[e-mail]</span><a href="mailto:' + o.email + '">' + esc(o.email) + '</a></li>' +
