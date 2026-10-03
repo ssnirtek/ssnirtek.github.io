@@ -3,7 +3,7 @@
 // Считаем: просмотр страницы, какие окна открывают, клики по внешним ссылкам, язык. Локально (localhost) и при Do Not Track не считаем.
 (function () {
   const OS = (window.OS = window.OS || {});
-  const CODE = '';   // например 'ssnirtek'; получите на goatcounter.com/signup
+  const CODE = 'ssnirtek';   // аккаунт ssnirtek.goatcounter.com
 
   const off = !CODE || /^(localhost|127\.|\[::1\])/.test(location.hostname) || navigator.doNotTrack === '1' || window.doNotTrack === '1';
   const send = (path, title) => {
