@@ -29,11 +29,6 @@ body[data-wall="spb"] #desktop {
 #hello .script { display: block; width: fit-content; margin-left: auto; position: relative; font-size: 1.22em; line-height: .78; color: var(--pink); margin: .04em .1em .2em auto; transform: rotate(-4deg); transform-origin: right center; text-shadow: 0 2px 18px rgba(0,0,0,.25); }
 #hello p { margin: 24px 0 0; font-size: 13px; opacity: .92; text-shadow: 0 1px 8px rgba(0,0,0,.75), 0 0 2px rgba(0,0,0,.5); }
 
-/* Время по Москве (как на макете) */
-#clockw { position: absolute; right: clamp(150px, 11.5vw, 200px); top: clamp(18px, 7.5vh, 70px); text-align: right; color: #f4efe4; pointer-events: none; }
-#clockw .cw-label { display: block; font: 300 clamp(18px, 1.9vw, 26px)/1.1 "Inter", sans-serif; letter-spacing: .01em; opacity: .92; text-shadow: 0 1px 8px rgba(0,0,0,.45); }
-#clockw .cw-time { display: block; margin-top: .02em; font-family: var(--f-hand); font-weight: 700; letter-spacing: .04em; font-size: clamp(54px, 6vw, 88px); line-height: 1; font-variant-numeric: tabular-nums; text-shadow: 0 2px 14px rgba(0,0,0,.4); }
-
 /* Папки лежат свободно по столу: в середине и немного по краям. Позиции (в процентах) заданы в apps.js
    и запоминаются, если папку перетащить. */
 #icons { list-style: none; margin: 0; padding: 0; position: absolute; inset: 0; }
@@ -56,7 +51,6 @@ body[data-wall="spb"] #desktop {
 .folder.whole img { display: block; width: 100%; height: 100%; object-fit: contain; pointer-events: none; }
 
 @media (max-width: 720px) {
-  #clockw { top: 14px; left: 20px; right: auto; text-align: left; }
   #icons { position: static; display: grid; grid-template-columns: repeat(3, 1fr); padding: 120px 10px 10px; }
   .slot { position: static !important; transform: none !important; }
   .icon { width: auto; }

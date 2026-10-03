@@ -16,12 +16,6 @@
   OS.extras.init();
   OS.works.init();
 
-  // Время по Москве (как на макете)
-  const moscow = document.getElementById('moscow');
-  const fmt = new Intl.DateTimeFormat('ru-RU', { timeZone: 'Europe/Moscow', hour: '2-digit', minute: '2-digit', hour12: false });
-  const tick = () => { if (moscow) moscow.textContent = fmt.format(new Date()); };
-  tick(); setInterval(tick, 10000);
-
   // можно открыть нужную папку по ссылке: index.html#projects
   const fromHash = location.hash.replace('#', '');
   if (fromHash && OS.apps.get(fromHash)) OS.wm.open(fromHash);

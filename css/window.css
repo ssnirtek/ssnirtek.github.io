@@ -94,6 +94,11 @@ iframe.pdf { width: 100%; height: 100%; min-height: 360px; border: 0; background
 @media (max-width: 720px) {
   .win { inset: 0 0 0 0 !important; width: auto !important; height: auto !important; border-radius: 0; border: 0; box-shadow: none; }
   .win-grip, .win-btns [data-a="max"] { display: none; }
+  /* на телефоне: свернуть не нужно (окно и так во весь экран), крестик крупный и надёжный для пальца */
+  .win-btns [data-a="min"] { display: none; }
+  .win-bar { padding: 2px 4px 2px 16px; }
+  .win-btns button { width: 48px; height: 44px; font-size: 24px; touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+  .term { margin: -18px -18px -24px; }
   .win-body { padding: 18px 18px 24px; }
   .about { grid-template-columns: 1fr; } .polaroid { max-width: 200px; }
   .facts { grid-template-columns: 1fr 1fr; } .gallery { grid-template-columns: 1fr 1fr; }
