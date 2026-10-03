@@ -103,15 +103,18 @@ OS.data = {
     ['статус', 'открыта к предложениям'],
   ],
 
-  // Стикер «мои работы» на столе: картинка (assets/works), подпись и окно, которое откроется по клику
+  // Стикер «мои работы» на столе: сначала backend (БД, API, проверки, архитектура), потом дизайн.
+  // Картинка (assets/works), подпись и окно, которое откроется по клику
   works: [
-    { img: 'assets/works/w1.jpg', title: 'Bijouterie.ss', sub: 'дипломный сайт', open: 'bijouterie' },
-    { img: 'assets/works/w2.jpg', title: 'Plant', sub: 'дизайн сайта', open: 'fg-plant' },
-    { img: 'assets/works/w3.jpg', title: 'Bijouterie.ss', sub: 'схема базы данных', open: 'bijouterie' },
-    { img: 'assets/works/w4.jpg', title: 'Antonio', sub: 'дизайн сайта', open: 'fg-restaurant' },
-    { img: 'assets/works/w5.jpg', title: 'Gift Selector', sub: 'приложение на C#', open: 'gift' },
-    { img: 'assets/works/w6.jpg', title: 'Киберпреступность', sub: 'инфографика', open: 'fg-cyber' },
-    { img: 'assets/works/w7.jpg', title: 'Antonio', sub: 'мобильная версия', open: 'fg-restaurant' },
+    { img: 'assets/works/w1.jpg', title: 'Bijouterie.ss', sub: 'схема базы данных', open: 'bijouterie' },
+    { img: 'assets/works/w2.jpg', title: 'Perfume API', sub: 'запросы в Postman', open: 'perfume' },
+    { img: 'assets/works/w3.jpg', title: 'Bijouterie.ss', sub: '96 проверок, все пройдены', open: 'bijouterie' },
+    { img: 'assets/works/w4.jpg', title: 'Bijouterie.ss', sub: 'архитектура MVC', open: 'bijouterie' },
+    { img: 'assets/works/w5.jpg', title: 'Bijouterie.ss', sub: 'безопасность', open: 'bijouterie' },
+    { img: 'assets/works/w6.jpg', title: 'Bijouterie.ss', sub: 'роли и админ-панель', open: 'bijouterie' },
+    { img: 'assets/works/w7.jpg', title: 'Bijouterie.ss', sub: 'дипломный сайт', open: 'bijouterie' },
+    { img: 'assets/works/w8.jpg', title: 'Plant', sub: 'дизайн сайта', open: 'fg-plant' },
+    { img: 'assets/works/w9.jpg', title: 'Antonio', sub: 'дизайн сайта', open: 'fg-restaurant' },
   ],
 
   figma: [
