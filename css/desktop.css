@@ -18,18 +18,18 @@ body[data-wall="paper"] #desktop { background: var(--grain), var(--paper); }
 
 /* Приветствие прямо на рабочем столе: главное видно без кликов */
 #hello { position: absolute; right: clamp(24px, 6vw, 110px); bottom: clamp(24px, 11vh, 110px); text-align: right; color: #f4efe4; pointer-events: none; max-width: 60vw; }
-#hello .eyebrow { font: 500 11.5px/1 "Inter", sans-serif; letter-spacing: .22em; text-transform: uppercase; opacity: .9; margin: 0 0 10px; text-shadow: 0 1px 8px rgba(0,0,0,.7); }
-#hello h1 { margin: 0; font-size: clamp(46px, 8vw, 110px); line-height: .95; font-weight: 500; letter-spacing: -.01em; }
+#hello .eyebrow { font: 500 10.5px/1 "Inter", sans-serif; letter-spacing: .22em; text-transform: uppercase; opacity: .9; margin: 0 0 10px; text-shadow: 0 1px 8px rgba(0,0,0,.7); }
+#hello h1 { margin: 0; font-size: clamp(38px, 4.8vw, 72px); line-height: .8; font-weight: 700; letter-spacing: .02em; text-transform: uppercase; }
 #hello h1 em { font-style: italic; font-weight: 500; }
-#hello .script { display: block; font-size: clamp(54px, 9.5vw, 132px); line-height: .8; color: var(--pink); margin: -.08em .25em 0 0; transform: rotate(-4deg); text-shadow: 0 2px 18px rgba(0,0,0,.25); }
-#hello p { margin: 18px 0 0; font-size: 15px; opacity: .92; text-shadow: 0 1px 8px rgba(0,0,0,.75), 0 0 2px rgba(0,0,0,.5); }
+#hello .script { display: block; width: fit-content; margin-left: auto; position: relative; font-size: 1.22em; line-height: .78; color: var(--pink); margin: .04em .1em .2em auto; transform: rotate(-4deg); transform-origin: right center; text-shadow: 0 2px 18px rgba(0,0,0,.25); }
+#hello p { margin: 24px 0 0; font-size: 13px; opacity: .92; text-shadow: 0 1px 8px rgba(0,0,0,.75), 0 0 2px rgba(0,0,0,.5); }
 body[data-wall="paper"] #hello { color: var(--ink); }
 body[data-wall="paper"] #hello .script { color: var(--pink); text-shadow: none; }
 
 /* Время по Москве (как на макете) */
 #clockw { position: absolute; left: clamp(20px, 5vw, 80px); top: clamp(18px, 9vh, 84px); color: #f4efe4; pointer-events: none; }
 #clockw .cw-label { display: block; font: 300 clamp(18px, 1.9vw, 26px)/1.1 "Inter", sans-serif; letter-spacing: .01em; opacity: .92; text-shadow: 0 1px 8px rgba(0,0,0,.45); }
-#clockw .cw-time { display: block; margin-top: -.18em; font-family: "Cormorant Garamond", Georgia, serif; font-weight: 500; font-size: clamp(44px, 5.2vw, 76px); line-height: 1; font-variant-numeric: tabular-nums; text-shadow: 0 2px 14px rgba(0,0,0,.4); }
+#clockw .cw-time { display: block; margin-top: .02em; font-family: var(--f-hand); font-weight: 700; letter-spacing: .04em; font-size: clamp(54px, 6vw, 88px); line-height: 1; font-variant-numeric: tabular-nums; text-shadow: 0 2px 14px rgba(0,0,0,.4); }
 body[data-wall="paper"] #clockw { color: var(--ink); } body[data-wall="paper"] #clockw .cw-label, body[data-wall="paper"] #clockw .cw-time { text-shadow: none; }
 
 /* Папки лежат свободно по столу: в середине и немного по краям. Позиции (в процентах) заданы в apps.js
@@ -45,8 +45,8 @@ body[data-wall="paper"] #clockw { color: var(--ink); } body[data-wall="paper"] #
 }
 .icon:hover { transform: rotate(var(--tilt, 0deg)) translateY(-4px); }
 .icon:focus-visible, .icon.sel { background: rgba(255,255,255,.10); }
-.icon .label { font-family: "Cormorant Garamond", Georgia, serif; font-style: italic; font-weight: 600; font-size: 16.5px; line-height: 1.05; text-shadow: 0 1px 6px rgba(0,0,0,.7); }
-.icon .note { font-size: 15.5px; line-height: 1; color: var(--pink); text-shadow: 0 1px 4px rgba(0,0,0,.6); transform: rotate(-2deg); }
+.icon .label { font-family: var(--f-hand); font-weight: 700; font-size: 23px; letter-spacing: .06em; text-transform: uppercase; line-height: 1; text-shadow: 0 1px 6px rgba(0,0,0,.7); }
+.icon .note { font-size: 20px; line-height: 1; color: var(--pink); text-shadow: 0 1px 4px rgba(0,0,0,.6); transform: rotate(-2deg); }
 
 /* Художественная папка (js/ui.js) */
 .folder { display: block; width: 69px; height: 59px; filter: drop-shadow(0 5px 7px rgba(0,0,0,.5)); }
@@ -62,3 +62,7 @@ body[data-wall="paper"] #clockw { color: var(--ink); } body[data-wall="paper"] #
   #hello { bottom: 70px; left: 20px; right: 20px; text-align: left; max-width: none; }
   #hello .script { margin: -.08em 0 0 .5em; }
 }
+
+/* «обновить» по правой кнопке: папки мигают */
+#icons { transition: opacity .18s; }
+#icons.refresh { opacity: 0; }

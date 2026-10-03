@@ -12,7 +12,9 @@
   };
   const FRONT = { x: 6, y: 44, w: 188, h: 114, r: 12 };
 
+
   OS.ui = {
+
     // folder(art, tab) -> <span class="folder">. tab: 'left' | 'right' | 'long'
     folder(art, tab) {
       const span = document.createElement('span');

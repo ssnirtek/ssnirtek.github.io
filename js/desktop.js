@@ -17,6 +17,7 @@
       const pos = saved[a.id] || a.pos || [50, 50];
       const li = document.createElement('li');
       li.className = 'slot';
+      li.dataset.app = a.id;
       li.style.left = pos[0] + '%';
       li.style.top = pos[1] + '%';
 
@@ -24,7 +25,11 @@
       b.type = 'button'; b.className = 'icon';
       b.style.setProperty('--tilt', (a.tilt || 0) + 'deg');
       b.innerHTML = '<span class="glyph"></span><span class="label"></span><span class="note"></span>';
-      if (a.art) b.querySelector('.glyph').replaceWith(OS.ui.folder(a.art, a.tab));
+      if (a.art) {
+        const f = OS.ui.folder(a.art, a.tab);
+        if (a.href) { f.classList.add('shortcut'); f.insertAdjacentHTML('beforeend', '<i class="arrow" aria-hidden="true"></i>'); }   // стрелка ярлыка
+        b.querySelector('.glyph').replaceWith(f);
+      }
       else b.querySelector('.glyph').textContent = a.icon || '📄';
       b.querySelector('.label').textContent = a.label || a.title;
       b.querySelector('.note').textContent = a.note || '';
@@ -45,6 +50,7 @@
         const r = li.getBoundingClientRect();
         const offX = e.clientX - (r.left + r.width / 2), offY = e.clientY - (r.top + r.height / 2);
         const sx = e.clientX, sy = e.clientY;
+        const startLeft = li.style.left, startTop = li.style.top;
         let moved = false;
         const move = (ev) => {
           if (!moved && Math.hypot(ev.clientX - sx, ev.clientY - sy) < 6) return;
@@ -57,7 +63,11 @@
           window.removeEventListener('pointermove', move);
           window.removeEventListener('pointerup', up);
           li.classList.remove('drag');
-          if (moved) {
+          if (moved && OS.extras && OS.extras.onDrop && OS.extras.onDrop(li, a)) {
+            // папку «бросили в корзину»: возвращаем на место
+            li.style.left = startLeft; li.style.top = startTop;
+            wasDragged = true; setTimeout(() => { wasDragged = false; }, 0);
+          } else if (moved) {
             saved[a.id] = [parseFloat(li.style.left), parseFloat(li.style.top)];
             save(saved);
             wasDragged = true; setTimeout(() => { wasDragged = false; }, 0);
@@ -82,5 +92,12 @@
   // вернуть папки на исходные места
   function reset() { try { localStorage.removeItem(KEY); } catch (e) { /* ничего */ } render(); }
 
-  OS.desktop = { render, reset };
+  // «обновить»: папки на мгновение гаснут и возвращаются, как на настоящем столе
+  function refresh() {
+    const ul = document.getElementById('icons');
+    ul.classList.add('refresh');
+    setTimeout(() => { render(); ul.classList.remove('refresh'); }, 200);
+  }
+
+  OS.desktop = { render, reset, refresh };
 })();

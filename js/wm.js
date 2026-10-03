@@ -13,6 +13,13 @@
     const app = OS.apps.get(appId);
     if (!app) return null;
 
+    // ярлык-ссылка: открываем адрес, окно не нужно
+    if (app.href) {
+      if (app.href.startsWith('mailto:')) location.href = app.href;
+      else window.open(app.href, '_blank', 'noopener');
+      return null;
+    }
+
     // одно окно на программу: повторное открытие просто поднимает его
     if (wins.has(appId)) {
       const w = wins.get(appId);

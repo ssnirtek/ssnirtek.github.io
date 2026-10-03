@@ -1,0 +1,62 @@
+/* Детали «настоящего стола» (js/extras.js): ярлыки, корзина, стикеры, трей, календарь, поиск, уведомление */
+
+/* ---------- бумажные ярлыки ---------- */
+/* стрелка ярлыка: маленький кружок в углу папки */
+.folder.shortcut { position: relative; }
+.folder .arrow { position: absolute; left: -4px; bottom: -4px; width: 20px; height: 20px; border-radius: 50%; box-shadow: 0 2px 6px rgba(0,0,0,.45);
+  background: #f4efe4 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M3 9 9 3M4 3h5v5' fill='none' stroke='%231d1c1a' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 11px no-repeat; }
+.icon.shake { animation: shake .5s ease; }
+@keyframes shake { 0%, 100% { transform: rotate(var(--tilt, 0deg)); } 20% { transform: rotate(-9deg); } 40% { transform: rotate(8deg); } 60% { transform: rotate(-6deg); } 80% { transform: rotate(4deg); } }
+.bubble { position: fixed; z-index: 100000; padding: 6px 14px 4px; background: var(--grain), var(--paper); color: var(--ink); border: 1px solid rgba(29,28,26,.5); border-radius: 3px; box-shadow: 0 10px 24px rgba(0,0,0,.35);
+  font: 700 24px/1 var(--f-hand); letter-spacing: .05em; text-transform: uppercase; white-space: nowrap; animation: pop .2s ease-out; transition: opacity .4s; }
+.bubble.out { opacity: 0; }
+
+/* ---------- имя: подчёркивание маркером ---------- */
+#hello .uline { position: absolute; left: 2%; bottom: -.14em; width: 96%; height: .12em; overflow: visible; pointer-events: none; }
+#hello .uline path { fill: none; stroke: #f4efe4; stroke-width: 3; stroke-linecap: round; vector-effect: non-scaling-stroke; stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 1.3s .9s ease forwards; }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+
+/* ---------- трей ---------- */
+.tray-btn { display: flex; align-items: center; gap: 6px; height: 30px; padding: 0 1px; background: none; border: 0; border-bottom: 1px solid transparent; color: inherit; font: inherit; opacity: .85; text-shadow: inherit; }
+.tray-btn:hover, .tray-btn:focus-visible { opacity: 1; border-bottom-color: var(--pink); outline: 0; }
+.tray-btn svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.t-lang span, .t-bat span { font: 400 12.5px/1 var(--f-mono); letter-spacing: .05em; }
+#clock { cursor: pointer; border-bottom: 1px solid transparent; padding: 6px 0; }
+#clock:hover, #clock:focus-visible { border-bottom-color: var(--pink); outline: 0; }
+
+/* ---------- календарь ---------- */
+.cal { position: fixed; right: 14px; bottom: calc(var(--taskbar-h) + 8px); z-index: 100000; width: 300px; padding: 14px 16px 12px;
+  background: var(--grain), var(--paper); color: var(--ink); border: 1px solid rgba(29,28,26,.5); border-radius: 3px; box-shadow: var(--shadow); animation: pop .18s ease-out; }
+.cal-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+.cal-head h3 { margin: 0; font: 700 32px/1 var(--f-hand); letter-spacing: .05em; text-transform: uppercase; }
+.cal-head button { width: 30px; height: 30px; background: none; border: 0; border-radius: 4px; font-size: 22px; line-height: 1; color: var(--ink); }
+.cal-head button:hover { background: var(--pink); }
+.cal-wd, .cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); text-align: center; }
+.cal-wd span { font: 400 11px/2 var(--f-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.cal-grid span { position: relative; height: 34px; display: grid; place-items: center; font: 400 13px/1 var(--f-mono); }
+.cal-grid .today b { position: relative; font-weight: 700; }
+.cal-grid .today svg { position: absolute; inset: 1px -1px; width: calc(100% + 2px); height: calc(100% - 2px); overflow: visible; }
+.cal-grid .today svg path { fill: none; stroke: #e2578c; stroke-width: 2; vector-effect: non-scaling-stroke; stroke-linecap: round; }
+.cal-foot { margin: 8px 0 0; padding-top: 8px; border-top: 1px solid rgba(29,28,26,.18); font: 400 12px/1.4 var(--f-mono); letter-spacing: .04em; color: var(--muted); }
+.cal-foot::first-letter { text-transform: uppercase; }
+
+/* ---------- поиск (Ctrl+K) ---------- */
+.spot { position: fixed; inset: 0; z-index: 100001; display: flex; justify-content: center; align-items: flex-start; padding-top: 16vh; background: rgba(14,12,10,.38); backdrop-filter: blur(3px); }
+.spot-card { width: min(580px, 92vw); background: var(--grain), var(--paper); border: 1px solid rgba(29,28,26,.5); border-radius: 3px; box-shadow: var(--shadow); overflow: hidden; animation: pop .16s ease-out; }
+.spot input { width: 100%; padding: 18px 22px; background: transparent; border: 0; border-bottom: 1px solid rgba(29,28,26,.2); outline: 0; font: 400 16px/1.2 var(--f-mono); letter-spacing: .03em; color: var(--ink); }
+.spot ul { list-style: none; margin: 0; padding: 6px; max-height: 50vh; overflow: auto; }
+.spot li { display: flex; align-items: baseline; gap: 12px; padding: 8px 16px; border-radius: 3px; cursor: pointer; }
+.spot li.on { background: var(--pink); }
+.spot li b { font: 700 25px/1 var(--f-hand); letter-spacing: .05em; text-transform: uppercase; white-space: nowrap; }
+.spot li small { flex: 1; min-width: 0; font: 400 11.5px/1.3 var(--f-mono); letter-spacing: .03em; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.spot li.on small { color: #4a2a38; }
+.spot li em { font: 400 10.5px/1 var(--f-mono); letter-spacing: .1em; text-transform: uppercase; font-style: normal; opacity: .7; }
+.spot li.none { cursor: default; color: var(--muted); font: 400 13px/1.6 var(--f-mono); }
+
+@media (max-width: 720px) {
+  .t-lang, .t-net, .t-bat { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #hello .uline path { animation: none; stroke-dashoffset: 0; }
+  .win, .cal, .spot-card, .bubble { animation: none; }
+}

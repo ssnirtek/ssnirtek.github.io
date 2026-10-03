@@ -12,6 +12,9 @@
     ['experience', 'опыт и учёба'],
     ['contact', 'как связаться'],
     ['open <имя>', 'открыть окно (about, projects, skills, resume, contact, bijouterie, perfume)'],
+    ['neofetch', 'система (как у программистов)'],
+    ['github', 'открыть мой GitHub'],
+    ['telegram', 'открыть Telegram'],
     ['ls', 'что есть на рабочем столе'],
     ['clear', 'очистить экран'],
   ];
@@ -25,6 +28,20 @@
     experience: () => D.experience.map((e) => e[0] + '  ' + e[1]).join('\n'),
     contact: () => 'E-mail: ' + D.owner.email + '\nГород:  ' + D.owner.city,
     ls: () => OS.apps.list.filter((a) => a.desktop !== false).map((a) => a.id).join('  '),
+    neofetch: () => [
+      "     .-~~~~-.        kate@bijouterie",
+      "   .'   ,,   '.      ---------------",
+      "  (            )     OS:       Katya OS 2026",
+      "  (            )     Стек:     PHP · Yii2 · MySQL · Git",
+      "   '.        .'      Редактор: Cursor",
+      "     '-....-'        Макеты:   Figma",
+      "                     Статус:   открыта к предложениям",
+    ].join('\n'),
+    github: () => { window.open('https://github.com/' + D.owner.github, '_blank', 'noopener'); return 'открываю github.com/' + D.owner.github; },
+    telegram: () => { window.open('https://t.me/' + D.owner.telegram, '_blank', 'noopener'); return 'открываю t.me/' + D.owner.telegram; },
+    sudo: (args) => (args.join(' ').replace(/\s+/g, ' ').trim() === 'hire katya')
+      ? '[sudo] пароль для recruiter: ********\nДоступ разрешён. Пишите: ' + D.owner.email + ' или @' + D.owner.telegram
+      : 'recruiter is not in the sudoers file. This incident will be reported.',
     date: () => new Date().toLocaleString('ru-RU'),
     'hire-me': () => 'Заявка принята. Осталось написать на ' + D.owner.email + ' :)',
   };
@@ -70,6 +87,12 @@
 
       input.addEventListener('keydown', (e) => {
         if (e.key === 'ArrowUp' && history.length) { hi = Math.max(0, hi - 1); input.value = history[hi]; e.preventDefault(); }
+        if (e.key === 'Tab') {
+          e.preventDefault();
+          const v = input.value.trim();
+          const hit = v && Object.keys(commands).concat(['clear', 'open']).filter((c) => c.startsWith(v));
+          if (hit && hit.length === 1) input.value = hit[0] + ' ';
+        }
         if (e.key === 'ArrowDown' && history.length) { hi = Math.min(history.length, hi + 1); input.value = history[hi] || ''; e.preventDefault(); }
       });
       body.addEventListener('click', () => input.focus());

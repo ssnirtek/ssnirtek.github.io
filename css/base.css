@@ -1,5 +1,10 @@
 /* Палитра и общие настройки. Все цвета и шрифты меняются здесь. */
 :root {
+  /* Три шрифта на весь сайт, как на странице «Обо мне»: текст, машинопись и рукописный маркер */
+  --f-text: "Inter", "Segoe UI", Arial, sans-serif;
+  --f-mono: "PT Mono", "Courier New", monospace;
+  --f-hand: "Amatic SC", "Arial Narrow", "Segoe UI", sans-serif;
+
   --paper: #ece7db;          /* кремовая бумага */
   --paper-2: #e3dccb;
   --ink: #1d1c1a;
@@ -19,15 +24,15 @@
 * { box-sizing: border-box; }
 html, body { height: 100%; margin: 0; }
 body {
-  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  font-family: var(--f-text);
   font-size: 14.5px; line-height: 1.55; color: var(--ink);
   overflow: hidden; -webkit-font-smoothing: antialiased; background: #151513;
   font-variant-numeric: lining-nums;
 }
 a { color: inherit; }
 button { font: inherit; cursor: pointer; }
-h1, h2, h3, .serif { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 600; }
-.script { font-family: "Marck Script", "Caveat", cursive; font-weight: 400; }   /* крупные рукописные слова */
-.note { font-family: "Caveat", "Marck Script", cursive; font-weight: 500; }      /* мелкие рукописные подписи */
-.mono { font-family: "Cascadia Mono", Consolas, monospace; }
+h1, h2, h3, .serif { font-family: var(--f-hand); font-weight: 700; }
+.script { font-family: var(--f-hand); font-weight: 700; text-transform: uppercase; }   /* крупные рукописные слова */
+.note { font-family: var(--f-hand); font-weight: 700; text-transform: uppercase; letter-spacing: .04em; }      /* мелкие рукописные подписи */
+.mono { font-family: var(--f-mono); }
 :focus-visible { outline: 2px solid var(--pink-deep); outline-offset: 3px; }

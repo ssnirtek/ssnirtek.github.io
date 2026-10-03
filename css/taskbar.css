@@ -22,9 +22,31 @@ body[data-wall="paper"] #taskbar { color: var(--ink); text-shadow: none; }
 #startmenu { position: absolute; left: 12px; bottom: calc(var(--taskbar-h) + 8px); width: 260px; margin: 0; padding: 8px; list-style: none;
   background: var(--grain), var(--paper); color: var(--ink); border: 1px solid rgba(29,28,26,.5); border-radius: 3px; box-shadow: var(--shadow); }
 #startmenu[hidden] { display: none; }
-#startmenu button { display: flex; align-items: baseline; gap: 10px; width: 100%; padding: 7px 10px; background: none; border: 0; border-radius: 3px; text-align: left; font-family: "Cormorant Garamond", Georgia, serif; font-style: italic; font-weight: 600; font-size: 18px; color: var(--ink); }
+#startmenu button { display: flex; align-items: baseline; gap: 10px; width: 100%; padding: 7px 10px; background: none; border: 0; border-radius: 3px; text-align: left; font-family: var(--f-hand); font-weight: 700; font-size: 22px; letter-spacing: .05em; text-transform: uppercase; color: var(--ink); }
 #startmenu button:hover, #startmenu button:focus-visible { background: var(--pink); }
 #startmenu .sep { height: 1px; background: var(--ink); opacity: .2; margin: 6px 4px; }
 #startmenu .cap { font: 500 10.5px/1 "Inter", sans-serif; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); padding: 8px 10px 4px; }
 
-@media (max-width: 720px) { 
+@media (max-width: 720px) { }
+
+/* Меню по правой кнопке (js/contextmenu.js): та же бумага и шрифт, что у меню «Пуск» */
+.ctx { position: fixed; z-index: 100000; min-width: 236px; margin: 0; padding: 6px; list-style: none;
+  background: var(--grain), var(--paper); color: var(--ink); border: 1px solid rgba(29,28,26,.5); border-radius: 3px; box-shadow: var(--shadow); }
+.ctx li { position: relative; }
+.ctx button { display: flex; align-items: baseline; gap: 8px; width: 100%; padding: 6px 10px 6px 6px; background: none; border: 0; border-radius: 3px; text-align: left;
+  font-family: var(--f-hand); font-weight: 700; font-size: 22px; letter-spacing: .05em; text-transform: uppercase; color: var(--ink); }
+.ctx button:hover, .ctx button:focus-visible, .ctx li.open > button { background: var(--pink); outline: 0; }
+.ctx .chk { width: 12px; flex: none; text-align: center; color: var(--pink-deep); font-style: normal; }
+.ctx button:hover .chk, .ctx li.open > button .chk { color: var(--ink); }
+.ctx .arr { margin-left: auto; font-style: normal; opacity: .6; }
+.ctx .sep { height: 1px; background: var(--ink); opacity: .2; margin: 5px 4px; }
+.ctx .sub { display: none; left: 100%; top: -7px; }
+.ctx li.open > .sub { display: block; }
+.ctx.flip .sub { left: auto; right: 100%; }
+.ctx .sub { position: absolute; }
+
+/* «о системе» */
+.sys-links { margin-top: 26px; }
+.sys-links a { text-decoration: underline; text-underline-offset: 3px; text-transform: none; }
+.sys-links a:hover { color: #e86a9a; }
+.sys-dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; background: #6b991c; margin-right: 8px; box-shadow: 0 0 0 3px rgba(107,153,28,.2); }

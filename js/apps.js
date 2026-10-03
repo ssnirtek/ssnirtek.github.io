@@ -145,6 +145,20 @@
     },
   });
 
+  /* ---------- О системе (из меню правой кнопки) ---------- */
+  OS.apps.register({
+    id: 'system', title: 'О системе', icon: '⚙', desktop: false, skin: 'white', size: { w: 640, h: 600 },
+    render(body) {
+      const o = D.owner;
+      body.innerHTML = '<div class="ab">' + head('о системе', 'Katya', 'OS') + bracket(['версия 2026', 'сборка вручную']) +
+        '<section class="sh-tl type">' +
+        D.system.map((r) => '<div class="row"><span class="yr">' + esc(r[0]).toUpperCase() + '</span><div><b>' +
+          (r[0] === 'статус' ? '<span class="sys-dot"></span>' : '') + esc(r[1]).toUpperCase() + '</b></div></div>').join('') + '</section>' +
+        '<p class="type sh-stack sys-links">[ <a href="https://github.com/' + o.github + '" target="_blank" rel="noopener">github.com/' + esc(o.github) + '</a> · ' +
+        '<a href="https://t.me/' + o.telegram + '" target="_blank" rel="noopener">@' + esc(o.telegram) + '</a> ]</p></div>';
+    },
+  });
+
   /* ---------- ИИ: опыт работы с нейросетями ---------- */
   OS.apps.register({
     id: 'ai', title: 'ИИ', desktop: false, skin: 'white', size: { w: 900, h: 720 },

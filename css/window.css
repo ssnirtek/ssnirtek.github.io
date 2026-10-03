@@ -17,7 +17,7 @@
 }
 .win-bar:active { cursor: grabbing; }
 .win-icon { display: none; }
-.win-title { flex: 1; font-family: "Cormorant Garamond", Georgia, serif; font-style: italic; font-weight: 600; font-size: 19px; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.win-title { flex: 1; font-family: var(--f-hand); font-weight: 700; font-size: 24px; letter-spacing: .07em; text-transform: uppercase; line-height: 1; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .win:not(.focus) .win-title { opacity: .55; }
 .win-btns { display: flex; gap: 2px; }
 .win-btns button { width: 30px; height: 28px; display: grid; place-items: center; padding: 0; background: none; border: 0; border-radius: 4px; color: var(--ink); font-size: 16px; line-height: 1; }
@@ -52,19 +52,19 @@
 .polaroid { position: relative; background: #f8f5ee; padding: 9px 9px 30px; box-shadow: 0 10px 24px rgba(0,0,0,.28); transform: rotate(-3deg); }
 .polaroid img { display: block; width: 100%; height: auto; filter: saturate(.85) contrast(1.03); }
 .polaroid::before { content: ""; position: absolute; left: 50%; top: -10px; width: 64px; height: 20px; transform: translateX(-50%) rotate(2deg); background: rgba(243,166,196,.75); }
-.polaroid figcaption { position: absolute; bottom: 4px; left: 0; right: 0; text-align: center; font: 500 17px/1 "Caveat", cursive; color: #4a4741; }
+.polaroid figcaption { position: absolute; bottom: 4px; left: 0; right: 0; text-align: center; font: 700 21px/1 var(--f-hand); letter-spacing: .05em; text-transform: uppercase; color: #4a4741; }
 
 /* Папки внутри окна «Проекты» */
 .files { list-style: none; padding: 0 !important; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); gap: 10px 6px; }
 .file { display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 8px 4px; background: none; border: 0; border-radius: 6px; text-align: center; width: 100%; color: var(--ink); transform: rotate(var(--tilt, 0deg)); transition: transform .18s; }
 .file:hover, .file:focus-visible { transform: rotate(var(--tilt, 0deg)) translateY(-4px); background: rgba(243,166,196,.22); }
 .file .folder { width: 65px; height: 55px; filter: drop-shadow(0 4px 5px rgba(40,40,38,.4)); }
-.file .label { font-family: "Cormorant Garamond", Georgia, serif; font-style: italic; font-weight: 600; font-size: 16.5px; line-height: 1.05; }
+.file .label { font-family: var(--f-hand); font-weight: 700; font-size: 21px; letter-spacing: .05em; text-transform: uppercase; line-height: 1; }
 .file .note { font-size: 15.5px; color: var(--pink-deep); line-height: 1; }
 
 .facts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 16px 0; }
 .facts div { border-top: 1px solid rgba(29,28,26,.4); padding-top: 8px; }
-.facts b { display: block; font-family: "Cormorant Garamond", Georgia, serif; font-size: 44px; line-height: .9; font-weight: 500; color: var(--pink-deep); }
+.facts b { display: block; font-family: var(--f-hand); font-size: 56px; line-height: .9; font-weight: 700; color: var(--pink-deep); }
 .facts span { font-size: 12px; color: var(--muted); }
 .stage { background: #d9d2c2; padding: 16px 16px 0; display: flex; gap: 12px; align-items: flex-end; justify-content: center; }
 .stage img { max-width: 100%; height: auto; display: block; }
@@ -79,16 +79,16 @@
 .tl { list-style: none; padding: 0 !important; }
 .tl li { margin: 0 0 14px; padding-left: 16px; border-left: 1px solid rgba(29,28,26,.4); position: relative; }
 .tl li::before { content: ""; position: absolute; left: -4px; top: 6px; width: 7px; height: 7px; border-radius: 50%; background: var(--pink-deep); }
-.tl .when { font: 500 17px/1 "Caveat", cursive; color: var(--pink-deep); display: block; margin-bottom: 2px; }
+.tl .when { font: 700 21px/1 var(--f-hand); letter-spacing: .05em; text-transform: uppercase; color: var(--pink-deep); display: block; margin-bottom: 2px; }
 iframe.pdf { width: 100%; height: 100%; min-height: 360px; border: 0; background: #fff; }
 
 /* Терминал */
-.term { background: #161615; color: #dcd9d0; margin: -24px -30px -28px; padding: 16px 18px; min-height: calc(100% + 52px); font: 13px/1.65 "Cascadia Mono", Consolas, monospace; }
+.term { background: #161615; color: #dcd9d0; margin: -24px -30px -28px; padding: 16px 18px; min-height: calc(100% + 52px); font: 13px/1.65 var(--f-mono); }
 .term .out { white-space: pre-wrap; word-break: break-word; }
 .term .m { color: #8fd0b5; } .term .p { color: var(--pink); } .term .d { color: #8b8880; }
 .term form { display: flex; gap: 8px; }
 .term input { flex: 1; background: none; border: 0; outline: 0; color: inherit; font: inherit; padding: 0; }
-.code { background: #161615; color: #dcd9d0; padding: 14px 16px; margin-top: 12px; font: 12.5px/1.7 "Cascadia Mono", Consolas, monospace; white-space: pre-wrap; }
+.code { background: #161615; color: #dcd9d0; padding: 14px 16px; margin-top: 12px; font: 12.5px/1.7 var(--f-mono); white-space: pre-wrap; }
 .code .m { color: #8fd0b5; }
 
 @media (max-width: 720px) {
