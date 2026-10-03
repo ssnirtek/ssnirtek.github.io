@@ -62,7 +62,7 @@
 }
 
 /* ---------- стикер «мои работы» (js/works.js) ---------- */
-.works { position: absolute; z-index: 3; left: 36%; top: clamp(128px, 14.2vh, 215px); width: 208px; padding: 11px 11px 10px; transform: translate(-50%, -50%) rotate(-2.5deg);
+.works { position: absolute; z-index: 3; left: 14%; top: clamp(150px, 22vh, 260px); width: 208px; padding: 7px 7px 8px; transform: translate(-50%, -50%) rotate(-2.5deg);
   background: #f8f3e6; box-shadow: 0 14px 28px rgba(0,0,0,.32), inset 0 -22px 26px rgba(0,0,0,.03); user-select: none; touch-action: none; transition: box-shadow .2s, transform .2s; cursor: grab; }
 .works:hover { transform: translate(-50%, -50%) rotate(-1deg); box-shadow: 0 20px 38px rgba(0,0,0,.4); }
 .works.lift { cursor: grabbing; transform: translate(-50%, -50%) rotate(0deg) scale(1.03); box-shadow: 0 24px 44px rgba(0,0,0,.45); z-index: 5; }
@@ -75,11 +75,11 @@
 .w-bar { position: absolute; left: 0; bottom: 0; height: 3px; width: 100%; background: var(--pink-deep); transform-origin: left; animation: wbar 3s linear forwards; }
 .works.paused .w-bar { animation-play-state: paused; }
 @keyframes wbar { from { transform: scaleX(0); } to { transform: scaleX(1); } }
-.w-cap { margin: 9px 2px 0; transition: opacity .18s; min-height: 38px; }
+.w-cap { margin: 8px 4px 0; transition: opacity .18s; min-height: 38px; }
 .w-cap.swap { opacity: 0; }
 .w-cap b { display: block; font: 700 25px/.95 var(--f-hand); letter-spacing: .05em; text-transform: uppercase; color: #1d1c1a; }
 .w-cap small { display: block; margin-top: 3px; font: 400 10.5px/1.3 var(--f-mono); letter-spacing: .08em; text-transform: uppercase; color: #5c5c5c; }
-.w-dots { display: flex; gap: 6px; margin: 4px 2px 0; }
+.w-dots { display: flex; gap: 6px; margin: 3px 3px 0; }
 .w-dots button { width: 14px; height: 14px; padding: 0; background: none; border: 0; position: relative; }
 .w-dots button::after { content: ""; position: absolute; left: 4px; top: 4px; width: 6px; height: 6px; border-radius: 50%; background: rgba(29,28,26,.25); transition: background .2s, transform .2s; }
 .w-dots button.on::after { background: var(--pink-deep); transform: scale(1.25); }
