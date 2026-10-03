@@ -59,6 +59,15 @@
     if (s && !s.querySelector('.uline')) {
       s.insertAdjacentHTML('beforeend', '<svg class="uline" viewBox="0 0 300 18" preserveAspectRatio="none" aria-hidden="true"><path d="M4 12C56 3 110 15 168 7S262 9 296 4" pathLength="1"/></svg>');
     }
+    const hello = document.getElementById('hello');
+    if (hello && !hello.querySelector('.hello-btns')) {
+      const o = D.owner;
+      hello.insertAdjacentHTML('beforeend',
+        '<div class="hello-btns">' +
+          '<a class="hb primary" href="' + D.owner.resume + '" download>скачать резюме</a>' +
+          '<a class="hb ghost" href="https://t.me/' + o.telegram + '" target="_blank" rel="noopener"><svg viewBox="0 0 200 80" preserveAspectRatio="none" aria-hidden="true"><path d="M20 44 C18 14 120 6 168 22 C204 34 188 68 120 72 C52 76 12 66 14 40 C15 26 40 12 72 9"/></svg><span>написать</span></a>' +
+        '</div>');
+    }
   }
 
   /* ---------- Трей: поиск, раскладка, сеть, батарея, календарь ---------- */

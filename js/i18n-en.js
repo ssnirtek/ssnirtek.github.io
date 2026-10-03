@@ -256,7 +256,9 @@
  "Город:": "City:",
  "Заявка принята. Осталось написать на": "Application accepted. All that is left is to write to",
  "версия 2026 · сборка вручную": "version 2026 · built by hand",
- "Редактор": "Editor"
+ "Редактор": "Editor",
+ "скачать резюме": "download resume",
+ "написать": "write to me"
 });
   OS.i18n.translateData();
 })();

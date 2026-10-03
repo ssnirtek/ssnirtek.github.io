@@ -85,3 +85,18 @@
 .w-dots button.on::after { background: var(--pink-deep); transform: scale(1.25); }
 @media (max-width: 720px) { .works { display: none; } }
 @media (prefers-reduced-motion: reduce) { .w-slide { transition: none; } .w-bar { animation: none; transform: none; } }
+
+/* ---------- кнопки на первом экране: «скачать резюме» и «написать» ---------- */
+.hello-btns { position: absolute; right: 0; top: 100%; display: flex; gap: 22px; justify-content: flex-end; align-items: center; margin-top: 20px; pointer-events: auto; white-space: nowrap; }
+.hb { position: relative; display: inline-block; font: 700 27px/1 var(--f-hand); letter-spacing: .07em; text-transform: uppercase; text-decoration: none; transition: transform .2s, box-shadow .2s; }
+.hb:focus-visible { outline: 2px solid #f4efe4; outline-offset: 5px; }
+.hb.primary { padding: 11px 24px 8px; color: #1d1c1a; background: var(--pink); transform: rotate(-2deg); box-shadow: 0 8px 18px rgba(0,0,0,.35), inset 0 -10px 14px rgba(180,60,110,.12); }
+.hb.primary::before { content: ""; position: absolute; left: 50%; top: -9px; width: 54px; height: 15px; transform: translateX(-50%) rotate(2deg); background: rgba(255,255,255,.5); }
+.hb.primary:hover { transform: rotate(-1deg) translateY(-3px); box-shadow: 0 14px 24px rgba(0,0,0,.4), inset 0 -10px 14px rgba(180,60,110,.12); }
+.hb.ghost { padding: 12px 26px 8px; color: #f4efe4; text-shadow: 0 1px 8px rgba(0,0,0,.6); }
+.hb.ghost svg { position: absolute; inset: -4px -6px; width: calc(100% + 12px); height: calc(100% + 8px); overflow: visible; }
+.hb.ghost svg path { fill: none; stroke: #f4efe4; stroke-width: 2.2; stroke-linecap: round; vector-effect: non-scaling-stroke; stroke-dasharray: 1; stroke-dashoffset: 0; }
+.hb.ghost span { position: relative; }
+.hb.ghost:hover { transform: translateY(-3px) rotate(1deg); }
+.hb.ghost:hover svg path { stroke: var(--pink); }
+@media (max-width: 720px) { .hello-btns { position: static; justify-content: flex-start; flex-wrap: wrap; gap: 18px; } .hb { font-size: 23px; } }

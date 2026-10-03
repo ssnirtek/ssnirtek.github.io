@@ -22,7 +22,7 @@ body[data-wall="spb"] #desktop {
 }
 
 /* Приветствие прямо на рабочем столе: главное видно без кликов */
-#hello { position: absolute; right: clamp(24px, 6vw, 110px); bottom: clamp(24px, 11vh, 110px); text-align: right; color: #f4efe4; pointer-events: none; max-width: 60vw; }
+#hello { position: absolute; right: clamp(24px, 6vw, 110px); bottom: clamp(40px, 13vh, 130px); text-align: right; color: #f4efe4; pointer-events: none; max-width: 60vw; }
 #hello .eyebrow { font: 500 10.5px/1 "Inter", sans-serif; letter-spacing: .22em; text-transform: uppercase; opacity: .9; margin: 0 0 10px; text-shadow: 0 1px 8px rgba(0,0,0,.7); }
 #hello h1 { margin: 0; font-size: clamp(38px, 4.8vw, 72px); line-height: .8; font-weight: 700; letter-spacing: .02em; text-transform: uppercase; }
 #hello h1 em { font-style: italic; font-weight: 500; }
