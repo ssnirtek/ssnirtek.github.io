@@ -13,8 +13,13 @@ body[data-wall="mountain"] #desktop {
     url("../assets/wallpaper-mountain.jpg?v=2") center / cover no-repeat,
     var(--charcoal);
 }
-/* Светлые обои «бумага» (переключаются в меню) */
-body[data-wall="paper"] #desktop { background: var(--grain), var(--paper); }
+/* Обои «луг со звёздами»: туман, зелень и цветные звёзды. Лёгкое затемнение, чтобы светлый текст читался */
+body[data-wall="meadow"] #desktop {
+  background:
+    linear-gradient(rgba(18,26,16,.30), rgba(18,26,16,.44)),
+    url("../assets/wallpaper-meadow.jpg") center / cover no-repeat,
+    #2b3427;
+}
 
 /* Приветствие прямо на рабочем столе: главное видно без кликов */
 #hello { position: absolute; right: clamp(24px, 6vw, 110px); bottom: clamp(24px, 11vh, 110px); text-align: right; color: #f4efe4; pointer-events: none; max-width: 60vw; }
@@ -23,14 +28,11 @@ body[data-wall="paper"] #desktop { background: var(--grain), var(--paper); }
 #hello h1 em { font-style: italic; font-weight: 500; }
 #hello .script { display: block; width: fit-content; margin-left: auto; position: relative; font-size: 1.22em; line-height: .78; color: var(--pink); margin: .04em .1em .2em auto; transform: rotate(-4deg); transform-origin: right center; text-shadow: 0 2px 18px rgba(0,0,0,.25); }
 #hello p { margin: 24px 0 0; font-size: 13px; opacity: .92; text-shadow: 0 1px 8px rgba(0,0,0,.75), 0 0 2px rgba(0,0,0,.5); }
-body[data-wall="paper"] #hello { color: var(--ink); }
-body[data-wall="paper"] #hello .script { color: var(--pink); text-shadow: none; }
 
 /* Время по Москве (как на макете) */
 #clockw { position: absolute; left: clamp(20px, 5vw, 80px); top: clamp(18px, 9vh, 84px); color: #f4efe4; pointer-events: none; }
 #clockw .cw-label { display: block; font: 300 clamp(18px, 1.9vw, 26px)/1.1 "Inter", sans-serif; letter-spacing: .01em; opacity: .92; text-shadow: 0 1px 8px rgba(0,0,0,.45); }
 #clockw .cw-time { display: block; margin-top: .02em; font-family: var(--f-hand); font-weight: 700; letter-spacing: .04em; font-size: clamp(54px, 6vw, 88px); line-height: 1; font-variant-numeric: tabular-nums; text-shadow: 0 2px 14px rgba(0,0,0,.4); }
-body[data-wall="paper"] #clockw { color: var(--ink); } body[data-wall="paper"] #clockw .cw-label, body[data-wall="paper"] #clockw .cw-time { text-shadow: none; }
 
 /* Папки лежат свободно по столу: в середине и немного по краям. Позиции (в процентах) заданы в apps.js
    и запоминаются, если папку перетащить. */

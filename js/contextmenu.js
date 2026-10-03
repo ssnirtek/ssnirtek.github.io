@@ -5,7 +5,7 @@
   const OS = (window.OS = window.OS || {});
   let menu = null;
 
-  const WALLS = [['mountain', 'горы'], ['night', 'ночной город'], ['paper', 'бумага']];
+  const WALLS = [['mountain', 'горы'], ['night', 'ночной город'], ['meadow', 'луг']];
 
   function close() { if (menu) { menu.remove(); menu = null; } }
 
