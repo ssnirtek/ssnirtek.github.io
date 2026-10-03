@@ -56,7 +56,7 @@
 
   function clock() {
     const d = new Date();
-    document.getElementById('clock').textContent = d.toLocaleTimeString('ru-RU', { hour: '2-digit', minute: '2-digit' });
+    document.getElementById('clock').textContent = d.toLocaleTimeString(OS.locale, { hour: '2-digit', minute: '2-digit' });
   }
 
   function init() {

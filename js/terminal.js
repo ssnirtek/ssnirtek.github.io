@@ -3,6 +3,7 @@
   const OS = (window.OS = window.OS || {});
   const D = OS.data;
 
+  const L = (ru, en) => (OS.lang === 'en' ? en : ru);
   const PROMPT = 'kate@bijouterie:~$';
   const HELP = [
     ['help', 'список команд'],
@@ -26,7 +27,7 @@
     projects: () => D.projects.map((p) => '• ' + p.title + ' (' + p.stack.join(', ') + ')\n  ' + p.sub).join('\n'),
     skills: () => D.skills.map((g) => g.group + ': ' + g.items.join(', ')).join('\n'),
     experience: () => D.experience.map((e) => e[0] + '  ' + e[1]).join('\n'),
-    contact: () => 'E-mail: ' + D.owner.email + '\nГород:  ' + D.owner.city,
+    contact: () => 'E-mail: ' + D.owner.email + '\n' + L('Город:  ', 'City:   ') + D.owner.city,
     ls: () => OS.apps.list.filter((a) => a.desktop !== false).map((a) => a.id).join('  '),
     neofetch: () => [
       "     .-~~~~-.        kate@bijouterie",
@@ -37,13 +38,13 @@
       "     '-....-'        Макеты:   Figma",
       "                     Статус:   открыта к предложениям",
     ].join('\n'),
-    github: () => { window.open('https://github.com/' + D.owner.github, '_blank', 'noopener'); return 'открываю github.com/' + D.owner.github; },
-    telegram: () => { window.open('https://t.me/' + D.owner.telegram, '_blank', 'noopener'); return 'открываю t.me/' + D.owner.telegram; },
+    github: () => { window.open('https://github.com/' + D.owner.github, '_blank', 'noopener'); return L('открываю ', 'opening ') + 'github.com/' + D.owner.github; },
+    telegram: () => { window.open('https://t.me/' + D.owner.telegram, '_blank', 'noopener'); return L('открываю ', 'opening ') + 't.me/' + D.owner.telegram; },
     sudo: (args) => (args.join(' ').replace(/\s+/g, ' ').trim() === 'hire katya')
-      ? '[sudo] пароль для recruiter: ********\nДоступ разрешён. Пишите: ' + D.owner.email + ' или @' + D.owner.telegram
+      ? L('[sudo] пароль для recruiter: ********\nДоступ разрешён. Пишите: ', '[sudo] password for recruiter: ********\nAccess granted. Write to: ') + D.owner.email + L(' или @', ' or @') + D.owner.telegram
       : 'recruiter is not in the sudoers file. This incident will be reported.',
-    date: () => new Date().toLocaleString('ru-RU'),
-    'hire-me': () => 'Заявка принята. Осталось написать на ' + D.owner.email + ' :)',
+    date: () => new Date().toLocaleString(OS.locale),
+    'hire-me': () => L('Заявка принята. Осталось написать на ', 'Application accepted. All that is left is to write to ') + D.owner.email + ' :)',
   };
 
   OS.apps.register({
@@ -59,7 +60,7 @@
       const print = (text, cls) => {
         const d = document.createElement('div');
         if (cls) d.className = cls;
-        d.textContent = text;
+        d.textContent = OS.tl(text);
         out.append(d);
         body.scrollTop = body.scrollHeight;
       };
@@ -77,12 +78,12 @@
         if (cmd === 'clear') { out.replaceChildren(); return; }
         if (cmd === 'open') {
           const id = args[0];
-          if (id && OS.apps.get(id)) { OS.wm.open(id); print('открываю ' + id, 'd'); }
-          else print('не нашла программу «' + (id || '') + '». Попробуйте ls.', 'd');
+          if (id && OS.apps.get(id)) { OS.wm.open(id); print(L('открываю ', 'opening ') + id, 'd'); }
+          else print(L('не нашла программу «' + (id || '') + '». Попробуйте ls.', 'program not found: ' + (id || '') + '. Try ls.'), 'd');
           return;
         }
         if (commands[cmd]) print(commands[cmd](args));
-        else print('команда не найдена: ' + cmd + '. Напишите help.', 'd');
+        else print(L('команда не найдена: ' + cmd + '. Напишите help.', 'command not found: ' + cmd + '. Type help.'), 'd');
       });
 
       input.addEventListener('keydown', (e) => {

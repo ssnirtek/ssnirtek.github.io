@@ -15,6 +15,7 @@
   OS.contextMenu.init();
   OS.extras.init();
   OS.works.init();
+  OS.i18n.observe();
 
   // можно открыть нужную папку по ссылке: index.html#projects
   const fromHash = location.hash.replace('#', '');

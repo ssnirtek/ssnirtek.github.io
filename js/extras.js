@@ -72,7 +72,7 @@
     const t = document.getElementById('tray'), clock = document.getElementById('clock');
     const mk = (cls, html, title, fn) => { const b = document.createElement('button'); b.type = 'button'; b.className = 'tray-btn ' + cls; b.innerHTML = html; b.title = title; if (fn) b.addEventListener('click', fn); return b; };
     const search = mk('t-search', SVG.search, 'Поиск по столу (Ctrl+K)', () => spotlight(true));
-    const lang = mk('t-lang', '<span>RU</span>', 'Раскладка', (e) => { const s = e.currentTarget.firstChild; s.textContent = s.textContent === 'RU' ? 'EN' : 'RU'; });
+    const lang = mk('t-lang', '<span>' + OS.lang.toUpperCase() + '</span>', 'Язык сайта: русский / английский', () => OS.i18n.setLang(OS.lang === 'en' ? 'ru' : 'en'));
     const net = mk('t-net', navigator.onLine ? SVG.wifi : SVG.off, navigator.onLine ? 'Сеть подключена' : 'Нет сети');
     net.style.cursor = 'default';
     const setNet = () => { net.innerHTML = navigator.onLine ? SVG.wifi : SVG.off; net.title = navigator.onLine ? 'Сеть подключена' : 'Нет сети'; };
@@ -103,7 +103,7 @@
     const draw = () => {
       const now = new Date();
       const first = (new Date(y, m, 1).getDay() + 6) % 7, days = new Date(y, m + 1, 0).getDate();
-      const title = new Date(y, m, 1).toLocaleDateString('ru-RU', { month: 'long' }) + ' ' + y;
+      const title = new Date(y, m, 1).toLocaleDateString(OS.locale, { month: 'long' }) + ' ' + y;
       let cells = '';
       for (let i = 0; i < first; i++) cells += '<span></span>';
       for (let d = 1; d <= days; d++) {
@@ -111,8 +111,8 @@
         cells += '<span class="' + (today ? 'today' : '') + '">' + (today ? '<svg viewBox="0 0 200 80" preserveAspectRatio="none" aria-hidden="true"><path d="M20 44C18 14 120 6 168 22 204 34 188 68 120 72 52 76 12 66 14 40 15 26 40 12 72 9"/></svg>' : '') + '<b>' + d + '</b></span>';
       }
       cal.innerHTML = '<div class="cal-head"><button type="button" data-d="-1" aria-label="Предыдущий месяц">‹</button><h3>' + esc(title) + '</h3><button type="button" data-d="1" aria-label="Следующий месяц">›</button></div>' +
-        '<div class="cal-wd">' + ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'].map((x) => '<span>' + x + '</span>').join('') + '</div><div class="cal-grid">' + cells + '</div>' +
-        '<p class="cal-foot">' + esc(now.toLocaleDateString('ru-RU', { weekday: 'long', day: 'numeric', month: 'long' })) + '</p>';
+        '<div class="cal-wd">' + (OS.lang === 'en' ? ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'] : ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс']).map((x) => '<span>' + x + '</span>').join('') + '</div><div class="cal-grid">' + cells + '</div>' +
+        '<p class="cal-foot">' + esc(now.toLocaleDateString(OS.locale, { weekday: 'long', day: 'numeric', month: 'long' })) + '</p>';
     };
     draw();
     cal.addEventListener('click', (e) => {
