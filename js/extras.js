@@ -59,7 +59,7 @@
     if (s && !s.querySelector('.uline')) {
       s.insertAdjacentHTML('beforeend', '<svg class="uline" viewBox="0 0 300 18" preserveAspectRatio="none" aria-hidden="true"><path d="M4 12C56 3 110 15 168 7S262 9 296 4" pathLength="1"/></svg>');
     }
-    const hello = document.getElementById('hello');
+    const hello = document.getElementById('desktop');
     if (hello && !hello.querySelector('.hello-btns')) {
       const o = D.owner;
       hello.insertAdjacentHTML('beforeend',
