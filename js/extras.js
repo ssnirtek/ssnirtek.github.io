@@ -131,7 +131,7 @@
     const items = OS.apps.list.filter((a) => !hidden.has(a.id)).map((a) => {
       const p = D.projects.find((x) => x.id === a.id);
       return { name: a.title, hint: p ? p.sub : (a.href ? a.href.replace(/^mailto:|^https?:\/\//, '') : ''), kind: a.href ? 'ссылка' : 'окно', run: () => OS.wm.open(a.id) };
-    }).concat([['mountain', 'горы'], ['night', 'ночной город'], ['meadow', 'луг']].map(([k, n]) => ({ name: 'обои: ' + n, hint: '', kind: 'обои', run: () => OS.setWall(k) })))
+    }).concat([['mountain', 'горы'], ['night', 'ночной город'], ['spb', 'питер']].map(([k, n]) => ({ name: 'обои: ' + n, hint: '', kind: 'обои', run: () => OS.setWall(k) })))
       .concat([{ name: 'расставить папки заново', hint: '', kind: 'стол', run: () => OS.desktop.reset() }]);
     spot = document.createElement('div'); spot.className = 'spot';
     spot.innerHTML = '<div class="spot-card" role="dialog" aria-label="Поиск"><input type="text" placeholder="поиск: проекты, навыки, github…" aria-label="Поиск" autocomplete="off" spellcheck="false"><ul role="listbox"></ul></div>';

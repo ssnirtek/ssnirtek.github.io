@@ -2,9 +2,9 @@
 (function () {
   const OS = window.OS;
 
-  // Обои: «mountain» (горы), «night» (ночной город) или «meadow» (луг со звёздами). Выбор запоминается.
+  // Обои: «mountain» (горы), «night» (ночной город) или «spb» (Петербург, телебашня). Выбор запоминается.
   const saved = (() => { try { return localStorage.getItem('wall'); } catch (e) { return null; } })();
-  document.body.dataset.wall = ['night', 'meadow', 'mountain'].includes(saved) ? saved : 'mountain';
+  document.body.dataset.wall = ['night', 'spb', 'mountain'].includes(saved) ? saved : 'mountain';
   OS.setWall = (w) => {
     document.body.dataset.wall = w;
     try { localStorage.setItem('wall', w); } catch (e) { /* без запоминания тоже работает */ }

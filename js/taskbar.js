@@ -35,7 +35,7 @@
     }));
     const sep = document.createElement('li'); sep.className = 'sep'; m.append(sep);
     const cap = document.createElement('li'); cap.className = 'cap'; cap.textContent = 'обои'; m.append(cap);
-    [['mountain', 'горы'], ['night', 'ночной город'], ['meadow', 'луг']].forEach(([key, name]) => {
+    [['mountain', 'горы'], ['night', 'ночной город'], ['spb', 'питер']].forEach(([key, name]) => {
       const w = document.createElement('li');
       const wb = document.createElement('button'); wb.type = 'button'; wb.textContent = name;
       wb.addEventListener('click', () => { OS.setWall(key); toggleMenu(false); });

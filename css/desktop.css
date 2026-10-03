@@ -13,12 +13,12 @@ body[data-wall="mountain"] #desktop {
     url("../assets/wallpaper-mountain.jpg?v=2") center / cover no-repeat,
     var(--charcoal);
 }
-/* Обои «луг со звёздами»: туман, зелень и цветные звёзды. Лёгкое затемнение, чтобы светлый текст читался */
-body[data-wall="meadow"] #desktop {
+/* Обои «питер»: чёрно-белая набережная, телебашня и голубой треугольник. Лёгкое затемнение для светлого текста */
+body[data-wall="spb"] #desktop {
   background:
-    linear-gradient(rgba(18,26,16,.30), rgba(18,26,16,.44)),
-    url("../assets/wallpaper-meadow.jpg") center / cover no-repeat,
-    #2b3427;
+    linear-gradient(rgba(14,14,13,.12), rgba(14,14,13,.22)),
+    url("../assets/wallpaper-spb.jpg") center 62% / cover no-repeat,
+    #3a3a3a;
 }
 
 /* Приветствие прямо на рабочем столе: главное видно без кликов */
