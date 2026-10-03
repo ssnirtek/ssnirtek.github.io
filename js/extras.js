@@ -22,10 +22,9 @@
   /* ---------- Корзина: пустая ---------- */
   OS.apps.register({
     id: 'trash', title: 'Корзина', label: 'корзина', note: 'пусто', art: 'assets/art/oldpaper.jpg', tab: 'long', pos: [5.5, 80], tilt: 1,
-    skin: 'white', size: { w: 520, h: 360 },
+    skin: 'white', size: { w: 520, h: 260 },
     render(body) {
-      body.innerHTML = '<div class="ab"><header class="sh-head"><p class="type sh-kick">корзина</p><h2 class="hand sh-title">Тут <span class="pk">пусто</span></h2></header>' +
-        '<p class="sh-text">Баги победила, дальше только фичи.</p></div>';
+      body.innerHTML = '<div class="ab"><header class="sh-head"><p class="type sh-kick">корзина</p><h2 class="hand sh-title">Тут <span class="pk">пусто</span></h2></header></div>';
     },
   });
 

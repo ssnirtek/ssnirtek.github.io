@@ -45,7 +45,7 @@ body[data-wall="paper"] #clockw { color: var(--ink); } body[data-wall="paper"] #
 }
 .icon:hover { transform: rotate(var(--tilt, 0deg)) translateY(-4px); }
 .icon:focus-visible, .icon.sel { background: rgba(255,255,255,.10); }
-.icon .label { font-family: var(--f-hand); font-weight: 700; font-size: 23px; letter-spacing: .06em; text-transform: uppercase; line-height: 1; text-shadow: 0 1px 6px rgba(0,0,0,.7); }
+.icon .label { font-family: var(--f-hand); font-weight: 400; font-size: 25px; letter-spacing: .07em; text-transform: uppercase; line-height: 1; text-shadow: 0 1px 6px rgba(0,0,0,.7); }
 .icon .note { font-size: 20px; line-height: 1; color: var(--pink); text-shadow: 0 1px 4px rgba(0,0,0,.6); transform: rotate(-2deg); }
 
 /* Художественная папка (js/ui.js) */
