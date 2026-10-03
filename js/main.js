@@ -14,6 +14,7 @@
   OS.taskbar.init();
   OS.contextMenu.init();
   OS.extras.init();
+  OS.works.init();
 
   // Время по Москве (как на макете)
   const moscow = document.getElementById('moscow');

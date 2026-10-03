@@ -103,6 +103,17 @@ OS.data = {
     ['статус', 'открыта к предложениям'],
   ],
 
+  // Стикер «мои работы» на столе: картинка (assets/works), подпись и окно, которое откроется по клику
+  works: [
+    { img: 'assets/works/w1.jpg', title: 'Bijouterie.ss', sub: 'дипломный сайт', open: 'bijouterie' },
+    { img: 'assets/works/w2.jpg', title: 'Plant', sub: 'дизайн сайта', open: 'fg-plant' },
+    { img: 'assets/works/w3.jpg', title: 'Bijouterie.ss', sub: 'схема базы данных', open: 'bijouterie' },
+    { img: 'assets/works/w4.jpg', title: 'Antonio', sub: 'дизайн сайта', open: 'fg-restaurant' },
+    { img: 'assets/works/w5.jpg', title: 'Gift Selector', sub: 'приложение на C#', open: 'gift' },
+    { img: 'assets/works/w6.jpg', title: 'Киберпреступность', sub: 'инфографика', open: 'fg-cyber' },
+    { img: 'assets/works/w7.jpg', title: 'Antonio', sub: 'мобильная версия', open: 'fg-restaurant' },
+  ],
+
   figma: [
     { id: 'fg-plant', dir: 'plant', title: 'Plant', label: 'plant', note: 'магазин растений', art: 'assets/art/p-flowers.jpg', tab: 'right',
       sub: 'Учебный проект · дизайн сайта магазина комнатных растений', stack: ['Figma', 'десктоп', 'мобильная версия', 'карусель'],
