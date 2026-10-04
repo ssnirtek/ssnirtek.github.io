@@ -53,7 +53,7 @@
 .spot li em { font: 400 10.5px/1 var(--f-mono); letter-spacing: .1em; text-transform: uppercase; font-style: normal; opacity: .7; }
 .spot li.none { cursor: default; color: var(--muted); font: 400 13px/1.6 var(--f-mono); }
 
-@media (max-width: 720px) {
+@media (max-width: 820px) {
   .t-lang, .t-net, .t-bat { display: none; }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -83,7 +83,7 @@
 .w-dots button { width: 14px; height: 14px; padding: 0; background: none; border: 0; position: relative; }
 .w-dots button::after { content: ""; position: absolute; left: 4px; top: 4px; width: 6px; height: 6px; border-radius: 50%; background: rgba(29,28,26,.25); transition: background .2s, transform .2s; }
 .w-dots button.on::after { background: var(--pink-deep); transform: scale(1.25); }
-@media (max-width: 720px) { .works { display: none; } }
+@media (max-width: 820px) { .works { display: none; } }
 @media (prefers-reduced-motion: reduce) { .w-slide { transition: none; } .w-bar { animation: none; transform: none; } }
 
 /* ---------- кнопки на первом экране: «скачать резюме» и «написать» ---------- */
@@ -99,10 +99,10 @@
 .hb.ghost span { position: relative; }
 .hb.ghost:hover { transform: translateY(-3px) rotate(1deg); }
 .hb.ghost:hover svg path { stroke: var(--pink); }
-@media (max-width: 720px) { .hello-btns { right: auto; left: 20px; top: auto; bottom: 54px; flex-direction: row; gap: 20px; align-items: center; } #hello { bottom: 124px; } .hb { font-size: 23px; } }
+@media (max-width: 820px) { .hello-btns { right: auto; left: 20px; top: auto; bottom: 54px; flex-direction: row; gap: 20px; align-items: center; } #hello { bottom: 124px; } .hb { font-size: 23px; } }
 
 /* ---------- телефон: чтобы ничего не налезало друг на друга ---------- */
-@media (max-width: 720px) {
+@media (max-width: 820px) {
   /* стол: имя, подпись и кнопки идут в столбик с отступами */
   #hello { bottom: 130px; }
   #hello h1 { font-size: 46px; line-height: .86; }
@@ -128,4 +128,21 @@
   .sh-head { margin-bottom: 18px; }
   .sh-facts b { font-size: 52px; }
   .ab .type { overflow-wrap: anywhere; }
+}
+
+/* маленькие и низкие телефоны: уже папки, мельче кнопки, чтобы всё помещалось без наложений */
+@media (max-width: 400px) {
+  .hb { font-size: 20px; }
+  .hb.primary { padding: 9px 16px 6px; }
+  .hb.ghost { padding: 10px 18px 6px; }
+  .hello-btns { gap: 14px; }
+  #hello h1 { font-size: 40px; }
+}
+@media (max-width: 820px) and (max-height: 780px) {
+  .folder { width: 50px; height: 43px; }
+  .icon .label { font-size: 21px; }
+  .icon .note { font-size: 17px; }
+  #hello { bottom: 118px; }
+  #hello p { margin-top: 24px; }
+  .hello-btns { bottom: 52px; }
 }

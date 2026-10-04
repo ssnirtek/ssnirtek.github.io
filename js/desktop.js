@@ -3,7 +3,7 @@
 (function () {
   const OS = (window.OS = window.OS || {});
   const KEY = 'icon-pos-v1';
-  const isMobile = () => window.matchMedia('(max-width: 720px)').matches;
+  const isMobile = () => window.matchMedia('(max-width: 820px)').matches;
   const load = () => { try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { return {}; } };
   const save = (o) => { try { localStorage.setItem(KEY, JSON.stringify(o)); } catch (e) { /* без запоминания тоже работает */ } };
 
@@ -14,12 +14,14 @@
     const saved = load();
 
     ul.replaceChildren(...OS.apps.list.filter((a) => a.desktop !== false).map((a) => {
-      const pos = saved[a.id] || a.pos || [50, 50];
+      // на экранах уже 1500 px папка «резюме» и подобные сдвигаются (posNarrow), чтобы не лежать на имени; сохранённые вами места важнее
+      const pos = saved[a.id] || (innerWidth < 1500 && a.posNarrow) || a.pos || [50, 50];
       const li = document.createElement('li');
       li.className = 'slot';
       li.dataset.app = a.id;
-      li.style.left = pos[0] + '%';
-      li.style.top = pos[1] + '%';
+      // зажимаем, чтобы папка с подписью никогда не уезжала за край экрана
+      li.style.left = 'clamp(62px, ' + pos[0] + '%, calc(100% - 62px))';
+      li.style.top = 'clamp(54px, ' + pos[1] + '%, calc(100% - 112px))';
 
       const b = document.createElement('button');
       b.type = 'button'; b.className = 'icon';

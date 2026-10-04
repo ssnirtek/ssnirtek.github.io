@@ -7,7 +7,7 @@
 
   const desk = () => document.getElementById('windows');   // область окон: над панелью задач
   const layer = () => document.getElementById('windows');
-  const isMobile = () => window.matchMedia('(max-width: 720px)').matches;
+  const isMobile = () => window.matchMedia('(max-width: 820px)').matches;
 
   function open(appId) {
     const app = OS.apps.get(appId);

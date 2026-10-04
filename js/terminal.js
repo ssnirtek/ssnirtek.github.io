@@ -48,7 +48,7 @@
   };
 
   OS.apps.register({
-    id: 'terminal', pos: [29.7, 49.7], title: 'Терминал', label: 'терминал', note: 'help', art: 'assets/art/folders/terminal.png', tab: 'left', tilt: -2, size: { w: 620, h: 400 },
+    id: 'terminal', pos: [29.7, 49.7], title: 'Терминал', label: 'терминал', note: 'help', art: 'assets/art/folders/terminal.webp', tab: 'left', tilt: -2, size: { w: 620, h: 400 },
     render(body) {
       body.innerHTML = '<div class="term"><div class="out" aria-live="polite"></div>' +
         '<form><span class="p">' + PROMPT + '</span><input type="text" autocomplete="off" spellcheck="false" aria-label="Команда"></form></div>';

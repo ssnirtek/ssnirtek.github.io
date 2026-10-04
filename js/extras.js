@@ -6,22 +6,22 @@
   const D = OS.data;
   const o = D.owner;
   const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
-  const isMobile = () => window.matchMedia('(max-width: 720px)').matches;
+  const isMobile = () => window.matchMedia('(max-width: 820px)').matches;
   const store = (k, v) => { try { if (v === undefined) return JSON.parse(localStorage.getItem(k)); localStorage.setItem(k, JSON.stringify(v)); } catch (e) { return null; } };
 
   /* ---------- Ярлыки-ссылки (слева на столе). ВЫКЛЮЧЕНЫ: чтобы включить, поставьте SHORTCUTS = true ---------- */
   const SHORTCUTS = false;
   const LINKS = [
-    { id: 'link-github', title: 'GitHub', label: 'github', note: 'мой код', art: 'assets/art/weave.jpg', tab: 'right', href: 'https://github.com/' + o.github, pos: [5.5, 30], tilt: -1.5 },
-    { id: 'link-telegram', title: 'Telegram', label: 'telegram', note: 'пиши мне', art: 'assets/art/pink-watercolor.jpg', tab: 'left', href: 'https://t.me/' + o.telegram, pos: [5.5, 45], tilt: 1.2 },
-    { id: 'link-mail', title: 'Почта', label: 'почта', note: 'e-mail', art: 'assets/art/envelope.jpg', tab: 'long', href: 'mailto:' + o.email, pos: [5.5, 60], tilt: -1 },
-    // hh.ru добавить, когда будет публичная ссылка на резюме: { id: 'link-hh', title: 'hh.ru', label: 'hh.ru', note: 'резюме', art: 'assets/art/lined.jpg', tab: 'right', href: '...', pos: [5.5, 75], tilt: 1 },
+    { id: 'link-github', title: 'GitHub', label: 'github', note: 'мой код', art: 'assets/art/weave.webp', tab: 'right', href: 'https://github.com/' + o.github, pos: [5.5, 30], tilt: -1.5 },
+    { id: 'link-telegram', title: 'Telegram', label: 'telegram', note: 'пиши мне', art: 'assets/art/pink-watercolor.webp', tab: 'left', href: 'https://t.me/' + o.telegram, pos: [5.5, 45], tilt: 1.2 },
+    { id: 'link-mail', title: 'Почта', label: 'почта', note: 'e-mail', art: 'assets/art/envelope.webp', tab: 'long', href: 'mailto:' + o.email, pos: [5.5, 60], tilt: -1 },
+    // hh.ru добавить, когда будет публичная ссылка на резюме: { id: 'link-hh', title: 'hh.ru', label: 'hh.ru', note: 'резюме', art: 'assets/art/lined.webp', tab: 'right', href: '...', pos: [5.5, 75], tilt: 1 },
   ];
   if (SHORTCUTS) LINKS.forEach((l) => OS.apps.register(l));
 
   /* ---------- Корзина: пустая ---------- */
   OS.apps.register({
-    id: 'trash', title: 'Корзина', label: 'корзина', note: 'пусто', art: 'assets/art/oldpaper.jpg', tab: 'long', pos: [5.3, 79.7], tilt: 1,
+    id: 'trash', title: 'Корзина', label: 'корзина', note: 'пусто', art: 'assets/art/oldpaper.webp', tab: 'long', pos: [5.3, 79.7], tilt: 1,
     skin: 'white', size: { w: 520, h: 260 },
     render(body) {
       body.innerHTML = '<div class="ab"><header class="sh-head"><p class="type sh-kick">корзина</p><h2 class="hand sh-title">Тут <span class="pk">пусто</span></h2></header></div>';
@@ -171,7 +171,14 @@
     greeting(); tray();
     document.addEventListener('click', (e) => { if (cal && !e.target.closest('.cal')) closeCal(); });
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') { closeCal(); spotlight(false); }
+      if (e.key === 'Escape') {
+        const overlay = cal || spot || document.querySelector('.ctx');
+        closeCal(); spotlight(false);
+        // Esc без открытых подсказок закрывает верхнее окно (кроме ввода в терминале)
+        const inField = /^(input|textarea)$/i.test((e.target.tagName || ''));
+        const top = OS.wm.focused && OS.wm.focused();
+        if (!overlay && top && !inField) OS.wm.close(top);
+      }
       const typing = /^(input|textarea)$/i.test((e.target.tagName || '')) || e.target.isContentEditable;
       if ((e.key === 'k' && (e.ctrlKey || e.metaKey)) || (e.key === '/' && !typing)) { e.preventDefault(); spotlight(true); }
     });

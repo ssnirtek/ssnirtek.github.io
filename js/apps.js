@@ -17,7 +17,7 @@
 
   /* ---------- Обо мне ---------- */
   OS.apps.register({
-    id: 'about', title: 'Обо мне', label: 'обо мне', note: 'кто я', art: 'assets/art/folders/about.png', tab: 'left', tilt: -2, pos: [33.9, 25.8],
+    id: 'about', title: 'Обо мне', label: 'обо мне', note: 'кто я', art: 'assets/art/folders/about.webp', tab: 'left', tilt: -2, pos: [33.9, 25.8],
     skin: 'white', size: { w: 940, h: 700 },
     render(body) {
       const o = D.owner;
@@ -80,7 +80,7 @@
 
   /* ---------- Проекты (папка с папками) ---------- */
   OS.apps.register({
-    id: 'projects', pos: [52.7, 17.3], title: 'Проекты', label: 'проекты', note: 'что делала', art: 'assets/art/folders/projects.png', tab: 'right', tilt: 1.5,
+    id: 'projects', pos: [52.7, 17.3], title: 'Проекты', label: 'проекты', note: 'что делала', art: 'assets/art/folders/projects.webp', tab: 'right', tilt: 1.5,
     skin: 'white', size: { w: 700, h: 520 },
     render(body) {
       body.innerHTML = '<div class="ab">' + head('проекты', 'Что я', 'делала') + '<ul class="files sh-files"></ul>' +
@@ -233,7 +233,7 @@
 
   /* ---------- Навыки ---------- */
   OS.apps.register({
-    id: 'skills', pos: [65.8, 36.7], title: 'Навыки', label: 'навыки', note: 'чем работаю', art: 'assets/art/folders/skills.png', tab: 'long', tilt: -1,
+    id: 'skills', pos: [65.8, 36.7], title: 'Навыки', label: 'навыки', note: 'чем работаю', art: 'assets/art/folders/skills.webp', tab: 'long', tilt: -1,
     skin: 'white', size: { w: 820, h: 600 },
     render(body) {
       body.innerHTML = '<div class="ab">' + head('навыки', 'Чем', 'работаю') +
@@ -244,7 +244,7 @@
 
   /* ---------- Опыт и учёба ---------- */
   OS.apps.register({
-    id: 'experience', pos: [41.8, 71.1], title: 'Опыт и учёба', label: 'опыт', note: 'где была', art: 'assets/art/folders/experience.png', tab: 'left', tilt: 2,
+    id: 'experience', pos: [41.8, 71.1], title: 'Опыт и учёба', label: 'опыт', note: 'где была', art: 'assets/art/folders/experience.webp', tab: 'left', tilt: 2,
     skin: 'white', size: { w: 780, h: 660 },
     render(body) {
       body.innerHTML = '<div class="ab">' + head('опыт и учёба', 'Где я', 'была') + '<section class="sh-tl type">' +
@@ -254,7 +254,7 @@
 
   /* ---------- Резюме (PDF) ---------- */
   OS.apps.register({
-    id: 'resume', pos: [64.3, 72.8], title: 'Резюме', label: 'резюме', note: 'pdf', art: 'assets/art/folders/resume.png', tab: 'right', tilt: -1.5,
+    id: 'resume', pos: [64.3, 72.8], posNarrow: [52, 56], title: 'Резюме', label: 'резюме', note: 'pdf', art: 'assets/art/folders/resume.webp', tab: 'right', tilt: -1.5,
     skin: 'white', size: { w: 680, h: 580 },
     render(body) {
       body.style.padding = '0';
@@ -264,7 +264,7 @@
 
   /* ---------- Контакты ---------- */
   OS.apps.register({
-    id: 'contact', pos: [94.4, 11.4], title: 'Контакты', label: 'контакты', note: 'напиши мне', art: 'assets/art/folders/contact.png', tab: 'long', tilt: 1,
+    id: 'contact', pos: [94.4, 11.4], title: 'Контакты', label: 'контакты', note: 'напиши мне', art: 'assets/art/folders/contact.webp', tab: 'long', tilt: 1,
     skin: 'white', size: { w: 560, h: 440 },
     render(body) {
       const o = D.owner;

@@ -6,7 +6,7 @@
   const D = OS.data;
   const KEY = 'works-pos-v1';
   const EVERY = 3000;
-  const isMobile = () => window.matchMedia('(max-width: 720px)').matches;
+  const isMobile = () => window.matchMedia('(max-width: 820px)').matches;
   const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   const load = () => { try { return JSON.parse(localStorage.getItem(KEY)); } catch (e) { return null; } };
   const save = (v) => { try { localStorage.setItem(KEY, JSON.stringify(v)); } catch (e) { /* без запоминания тоже работает */ } };
@@ -21,7 +21,7 @@
     el.innerHTML =
       '<span class="tape"></span>' +
       '<button type="button" class="w-stage">' +
-        list.map((w, i) => '<img class="w-slide' + (i === 0 ? ' on' : '') + '" src="' + w.img + '" alt="' + esc(w.title + ', ' + w.sub) + '" draggable="false" decoding="async">').join('') +
+        list.map((w, i) => '<img class="w-slide' + (i === 0 ? ' on' : '') + '" ' + (i === 0 ? 'src' : 'data-src') + '="' + w.img + '" alt="' + esc(w.title + ', ' + w.sub) + '" draggable="false" decoding="async">').join('') +
         '<span class="w-open">открыть</span><i class="w-bar"></i>' +
       '</button>' +
       '<p class="w-cap"><b></b><small></small></p>' +
@@ -32,6 +32,9 @@
     desk.insertBefore(el, wins);
 
     const slides = [...el.querySelectorAll('.w-slide')], dots = [...el.querySelectorAll('.w-dots button')];
+    // остальные слайды подгружаем, когда браузер освободился: первый экран грузится быстрее
+    const loadRest = () => slides.forEach((s) => { if (s.dataset.src) { s.src = s.dataset.src; delete s.dataset.src; } });
+    (window.requestIdleCallback || ((f) => setTimeout(f, 1500)))(loadRest, { timeout: 3000 });
     const cap = el.querySelector('.w-cap'), bar = el.querySelector('.w-bar'), stage = el.querySelector('.w-stage');
     let cur = 0, timer = null;
 
