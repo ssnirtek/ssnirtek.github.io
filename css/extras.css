@@ -100,3 +100,32 @@
 .hb.ghost:hover { transform: translateY(-3px) rotate(1deg); }
 .hb.ghost:hover svg path { stroke: var(--pink); }
 @media (max-width: 720px) { .hello-btns { right: auto; left: 20px; top: auto; bottom: 54px; flex-direction: row; gap: 20px; align-items: center; } #hello { bottom: 124px; } .hb { font-size: 23px; } }
+
+/* ---------- телефон: чтобы ничего не налезало друг на друга ---------- */
+@media (max-width: 720px) {
+  /* стол: имя, подпись и кнопки идут в столбик с отступами */
+  #hello { bottom: 130px; }
+  #hello h1 { font-size: 46px; line-height: .86; }
+  #hello .script { margin: 0 0 .16em .4em; font-size: 1.14em; }
+  #hello .uline { bottom: -.1em; }
+  #hello p { margin-top: 30px; font-size: 12.5px; line-height: 1.5; max-width: 330px; }
+  #hello .eyebrow { margin-bottom: 14px; }
+  .hello-btns { bottom: 58px; }
+
+  /* «Обо мне»: имя в одну строку над фамилией, подпись с овалом под ними */
+  .ab-head { gap: 18px; min-height: 0; }
+  .ab-name { display: flex; flex-direction: column; align-items: flex-start; }
+  .ab-name .first { position: static; transform: rotate(-4deg); font-size: 48px; margin: 0 0 6px 6px; line-height: .9; }
+  .ab-name .last { padding-top: 0; font-size: clamp(64px, 20vw, 96px); line-height: .85; }
+  .ab-tag { margin: 22px 0 0 14px; }
+  .ab-tag span { font-size: 38px; }
+  .ab-year { text-align: left; margin-top: 12px; }
+  .ab-about { margin-top: 26px; }
+  .ab-hi .sign { font-size: 56px; }
+
+  /* внутри окон: заголовки и подписи переносятся, а не наезжают */
+  .sh-title { font-size: 52px; line-height: .9; }
+  .sh-head { margin-bottom: 18px; }
+  .sh-facts b { font-size: 52px; }
+  .ab .type { overflow-wrap: anywhere; }
+}
