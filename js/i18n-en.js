@@ -279,7 +279,14 @@
  "Справочники: марки, классы, категории и автомобили (цена за день, цвет, год, номер, свободна ли машина).": "Reference tables: brands, classes, categories and cars (price per day, colour, year, plate number, whether the car is free).",
  "Заявки на аренду и отчёты пользователей, связи между таблицами на уровне базы.": "Rental requests and user reports, relations between tables enforced in the database.",
  "Управление пользователями и вход; CRUD по всем сущностям с поиском и фильтрами (search-модели Yii2).": "User management and sign-in; CRUD for all entities with search and filters (Yii2 search models).",
- "Мобильное меню": "Mobile menu"
+ "Мобильное меню": "Mobile menu",
+ "афиша и обложка": "poster and cover",
+ "афиша выставки": "exhibition poster",
+ "Учебный проект · афиша выставки и обложка проекта": "Study project · exhibition poster and project cover",
+ "печатный макет A4": "A4 print layout",
+ "типографика": "typography",
+ "коллаж": "collage",
+ "Афиша выставки редких и экзотических растений формата A4 и обложка проекта магазина редких растений: растровая печать, градиентный фон, фирменные шрифты.": "An A4 poster for an exhibition of rare and exotic plants and a cover for a rare-plant shop project: halftone print effect, gradient background and display typefaces."
 });
   OS.i18n.translateData();
 })();
