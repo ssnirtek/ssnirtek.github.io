@@ -125,6 +125,7 @@ OS.data = {
     { img: 'assets/works/w8.jpg', title: 'Plant', sub: 'дизайн сайта', open: 'fg-plant' },
     { img: 'assets/works/w9.jpg', title: 'Antonio', sub: 'дизайн сайта', open: 'fg-restaurant' },
     { img: 'assets/works/w10.jpg', title: 'Foliage', sub: 'афиша выставки', open: 'fg-foliage' },
+    { img: 'assets/works/w11.jpg', title: 'Rare plant shop', sub: 'обложка проекта', open: 'fg-rare' },
   ],
 
   figma: [
@@ -141,9 +142,12 @@ OS.data = {
       sub: 'Учебный проект · сайт итальянского ресторана',
       stack: ['Figma', 'десктоп', 'мобильная версия', 'фирменный стиль'],
       text: 'Логотип и фирменный стиль, сайт ресторана (главная, меню, галерея атмосферы, бронирование, контакты), мобильная версия, набор кнопок и три цветовых варианта.', shots: 9 },
-    { id: 'fg-foliage', dir: 'foliage', title: 'Foliage', label: 'foliage', note: 'афиша и обложка', art: 'assets/art/p-stars.webp', tab: 'left',
-      sub: 'Учебный проект · афиша выставки и обложка проекта', stack: ['Figma', 'печатный макет A4', 'типографика', 'коллаж'],
-      text: 'Афиша выставки редких и экзотических растений формата A4 и обложка проекта магазина редких растений: растровая печать, градиентный фон, фирменные шрифты.', shots: 2 },
+    { id: 'fg-foliage', dir: 'foliage', title: 'Foliage', label: 'foliage', note: 'афиша', art: 'assets/art/p-stars.webp', tab: 'long',
+      sub: 'Учебный проект · афиша выставки растений', stack: ['Figma', 'печатный макет A4', 'типографика', 'коллаж'],
+      text: 'Афиша выставки редких и экзотических растений формата A4: растровая печать, градиентный фон, цветочный коллаж и акцидентный шрифт.', shots: 1 },
+    { id: 'fg-rare', dir: 'rare', title: 'Rare plant shop', label: 'rare plants', note: 'обложка', art: 'assets/art/p-lamb.webp', tab: 'right',
+      sub: 'Учебный проект · обложка проекта магазина редких растений', stack: ['Figma', 'обложка', 'типографика', 'коллаж'],
+      text: 'Обложка проекта сайта магазина редких растений: живая фотография луга, растровые силуэты маков на розовом фоне и крупный заголовок.', shots: 1 },
   ],
 
   perfume: {

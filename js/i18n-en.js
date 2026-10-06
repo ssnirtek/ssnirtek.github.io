@@ -286,7 +286,15 @@
  "печатный макет A4": "A4 print layout",
  "типографика": "typography",
  "коллаж": "collage",
- "Афиша выставки редких и экзотических растений формата A4 и обложка проекта магазина редких растений: растровая печать, градиентный фон, фирменные шрифты.": "An A4 poster for an exhibition of rare and exotic plants and a cover for a rare-plant shop project: halftone print effect, gradient background and display typefaces."
+ "Афиша выставки редких и экзотических растений формата A4 и обложка проекта магазина редких растений: растровая печать, градиентный фон, фирменные шрифты.": "An A4 poster for an exhibition of rare and exotic plants and a cover for a rare-plant shop project: halftone print effect, gradient background and display typefaces.",
+ "афиша": "poster",
+ "обложка": "cover",
+ "обложка проекта": "project cover",
+ "Учебный проект · афиша выставки растений": "Study project · plant exhibition poster",
+ "Афиша выставки редких и экзотических растений формата A4: растровая печать, градиентный фон, цветочный коллаж и акцидентный шрифт.": "An A4 poster for an exhibition of rare and exotic plants: halftone print effect, gradient background, flower collage and a display typeface.",
+ "Rare plant shop": "Rare plant shop",
+ "Учебный проект · обложка проекта магазина редких растений": "Study project · cover for a rare-plant shop project",
+ "Обложка проекта сайта магазина редких растений: живая фотография луга, растровые силуэты маков на розовом фоне и крупный заголовок.": "Cover for a rare-plant shop website project: a photograph of a meadow, halftone poppy silhouettes on a pink background and a large headline."
 });
   OS.i18n.translateData();
 })();
