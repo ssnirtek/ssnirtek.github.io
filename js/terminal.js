@@ -13,7 +13,7 @@
     ['experience', 'опыт и учёба'],
     ['contact', 'как связаться'],
     ['open <имя>', 'открыть окно (about, projects, skills, resume, contact, bijouterie, perfume)'],
-    ['neofetch', 'система (как у программистов)'],
+    ['neofetch', 'сведения о системе'],
     ['github', 'открыть мой GitHub'],
     ['telegram', 'открыть Telegram'],
     ['ls', 'что есть на рабочем столе'],
@@ -32,7 +32,7 @@
     neofetch: () => [
       "     .-~~~~-.        kate@bijouterie",
       "   .'   ,,   '.      ---------------",
-      "  (            )     OS:       Katya OS 2026",
+      "  (            )     Сайт:     портфолио, 2026",
       "  (            )     Стек:     PHP · Yii2 · MySQL · Git",
       "   '.        .'      Редактор: Cursor",
       "     '-....-'        Макеты:   Figma",
@@ -44,7 +44,7 @@
       ? L('[sudo] пароль для recruiter: ********\nДоступ разрешён. Пишите: ', '[sudo] password for recruiter: ********\nAccess granted. Write to: ') + D.owner.email + L(' или @', ' or @') + D.owner.telegram
       : 'recruiter is not in the sudoers file. This incident will be reported.',
     date: () => new Date().toLocaleString(OS.locale),
-    'hire-me': () => L('Заявка принята. Осталось написать на ', 'Application accepted. All that is left is to write to ') + D.owner.email + ' :)',
+    'hire-me': () => L('Заявка принята. Для связи напишите на ', 'Application accepted. To get in touch, write to ') + D.owner.email,
   };
 
   OS.apps.register({

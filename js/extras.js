@@ -24,7 +24,7 @@
     id: 'trash', title: 'Корзина', label: 'корзина', note: 'пусто', art: 'assets/art/oldpaper.webp', tab: 'long', pos: [5.3, 79.7], tilt: 1,
     skin: 'white', size: { w: 520, h: 260 },
     render(body) {
-      body.innerHTML = '<div class="ab"><header class="sh-head"><p class="type sh-kick">корзина</p><h2 class="hand sh-title">Тут <span class="pk">пусто</span></h2></header></div>';
+      body.innerHTML = '<div class="ab"><header class="sh-head"><p class="type sh-kick">корзина</p><h2 class="hand sh-title">Корзина <span class="pk">пуста</span></h2></header></div>';
     },
   });
 
@@ -36,7 +36,7 @@
     if (Math.hypot((a.left + a.width / 2) - (b.left + b.width / 2), (a.top + a.height / 2) - (b.top + b.height / 2)) > 80) return false;
     const icon = t.querySelector('.icon');
     icon.classList.remove('shake'); void icon.offsetWidth; icon.classList.add('shake');
-    bubble(t, app.href ? 'ярлык не мусор' : 'эту папку нельзя: это моё портфолио');
+    bubble(t, app.href ? 'Ярлык нельзя удалить' : 'Эту папку нельзя удалить');
     return true;
   }
   function bubble(slot, text) {

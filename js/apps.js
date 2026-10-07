@@ -17,7 +17,7 @@
 
   /* ---------- Обо мне ---------- */
   OS.apps.register({
-    id: 'about', title: 'Обо мне', label: 'обо мне', note: 'кто я', art: 'assets/art/folders/about.webp', tab: 'left', tilt: -2, pos: [33.9, 25.8],
+    id: 'about', title: 'Обо мне', label: 'обо мне', note: 'профиль', art: 'assets/art/folders/about.webp', tab: 'left', tilt: -2, pos: [33.9, 25.8],
     skin: 'white', size: { w: 940, h: 700 },
     render(body) {
       const o = D.owner;
@@ -46,10 +46,10 @@
             '<figure class="ab-photo"><img src="' + o.photo + '" alt="' + esc(o.name) + '"></figure>' +
             '<div><h2>Обо мне</h2>' +
               D.about.map((p) => '<p>' + esc(p) + '</p>').join('') +
-              '<p><a href="mailto:' + o.email + '">Напишите мне</a></p></div>' +
+              '<p><a href="mailto:' + o.email + '">Написать на почту</a></p></div>' +
           '</section>' +
 
-          '<div class="ab-hi"><span class="t">Привет, я</span><span class="sign">backend developer</span></div>' +
+          '<div class="ab-hi"><span class="t">Специализация</span><span class="sign">backend developer</span></div>' +
 
           '<section class="ab-tl type">' +
             '<div class="col">' + jobs.map((e) => '<div class="row"><span class="yr">' + flat(e[0]) + '</span><span><b>' + flat(e[1]) + '</b></span></div>').join('') + '</div>' +
@@ -80,10 +80,10 @@
 
   /* ---------- Проекты (папка с папками) ---------- */
   OS.apps.register({
-    id: 'projects', pos: [52.7, 17.3], title: 'Проекты', label: 'проекты', note: 'что делала', art: 'assets/art/folders/projects.webp', tab: 'right', tilt: 1.5,
+    id: 'projects', pos: [52.7, 17.3], title: 'Проекты', label: 'проекты', note: 'работы', art: 'assets/art/folders/projects.webp', tab: 'right', tilt: 1.5,
     skin: 'white', size: { w: 700, h: 520 },
     render(body) {
-      body.innerHTML = '<div class="ab">' + head('проекты', 'Что я', 'делала') + '<ul class="files sh-files"></ul>' +
+      body.innerHTML = '<div class="ab">' + head('портфолио', 'Выполненные', 'проекты') + '<ul class="files sh-files"></ul>' +
         '<p class="note sh-hint">дважды нажмите на папку, чтобы открыть</p></div>';
       const ul = body.querySelector('.files');
       D.projects.filter((p) => !p.hidden).forEach((p, i) => {
@@ -150,7 +150,7 @@
     id: 'system', title: 'О системе', icon: '⚙', desktop: false, skin: 'white', size: { w: 640, h: 600 },
     render(body) {
       const o = D.owner;
-      body.innerHTML = '<div class="ab">' + head('о системе', 'Katya', 'OS') + bracket(['версия 2026', 'сборка вручную']) +
+      body.innerHTML = '<div class="ab">' + head('о системе', 'Портфолио', '2026') + bracket(['версия 2026']) +
         '<section class="sh-tl type">' +
         D.system.map((r) => '<div class="row"><span class="yr">' + esc(r[0]).toUpperCase() + '</span><div><b>' +
           (r[0] === 'статус' ? '<span class="sys-dot"></span>' : '') + esc(r[1]).toUpperCase() + '</b></div></div>').join('') + '</section>' +
@@ -168,8 +168,8 @@
       const shots = D.aiShots.map(fig);
       // последняя картинка стоит в паре с примером запроса
       const last = shots.pop();
-      const gallery = '<h3 class="hand sh-sub">Магазин глазами нейросети</h3>' +
-        '<p class="sh-text">Как мог бы выглядеть магазин из моего диплома в жизни. Картинки сгенерированы нейросетью Gemini по моим запросам: я задавала фирменные цвета (графит, нежно-розовый, травяной зелёный), материалы и ракурсы, потом правила результат, пока он не совпал с задумкой. Это не фотографии: магазин пока существует только на сайте.</p>' +
+      const gallery = '<h3 class="hand sh-sub">Визуализация магазина</h3>' +
+        '<p class="sh-text">Визуализация магазина из дипломного проекта в реальном пространстве. Изображения сгенерированы нейросетью Gemini по моим запросам: я задавала фирменные цвета (графит, нежно-розовый, травяной зелёный), материалы и ракурсы и дорабатывала результат до соответствия замыслу. Это не фотографии: магазин существует только как сайт.</p>' +
         '<div class="ai-gal">' + shots.join('') + last +
         '<div class="ai-prompt-box"><h3>[пример запроса]</h3><p class="sh-api ai-prompt">' + esc(D.aiPrompt) + '</p></div></div>';
       const items = D.ai.map((c) => '<li><b class="type">' + esc(c.title).toUpperCase() + '</b>' +
@@ -233,10 +233,10 @@
 
   /* ---------- Навыки ---------- */
   OS.apps.register({
-    id: 'skills', pos: [65.8, 36.7], title: 'Навыки', label: 'навыки', note: 'чем работаю', art: 'assets/art/folders/skills.webp', tab: 'long', tilt: -1,
+    id: 'skills', pos: [65.8, 36.7], title: 'Навыки', label: 'навыки', note: 'технологии', art: 'assets/art/folders/skills.webp', tab: 'long', tilt: -1,
     skin: 'white', size: { w: 820, h: 600 },
     render(body) {
-      body.innerHTML = '<div class="ab">' + head('навыки', 'Чем', 'работаю') +
+      body.innerHTML = '<div class="ab">' + head('навыки', 'Профессиональные', 'навыки') +
         '<section class="ab-cols type sh-cols">' +
         D.skills.map((g) => '<div><h3>[' + esc(g.group) + ']</h3><ul>' + dotted(g.items) + '</ul></div>').join('') + '</section></div>';
     },
@@ -244,10 +244,10 @@
 
   /* ---------- Опыт и учёба ---------- */
   OS.apps.register({
-    id: 'experience', pos: [41.8, 71.1], title: 'Опыт и учёба', label: 'опыт', note: 'где была', art: 'assets/art/folders/experience.webp', tab: 'left', tilt: 2,
+    id: 'experience', pos: [41.8, 71.1], title: 'Опыт и образование', label: 'опыт', note: 'работа и учёба', art: 'assets/art/folders/experience.webp', tab: 'left', tilt: 2,
     skin: 'white', size: { w: 780, h: 660 },
     render(body) {
-      body.innerHTML = '<div class="ab">' + head('опыт и учёба', 'Где я', 'была') + '<section class="sh-tl type">' +
+      body.innerHTML = '<div class="ab">' + head('опыт и образование', 'Опыт и', 'образование') + '<section class="sh-tl type">' +
         D.experience.map((e) => '<div class="row"><span class="yr">' + esc(e[0]).toUpperCase() + '</span><div><b>' + esc(e[1]).toUpperCase() + '</b><p class="sub">' + esc(e[2]).toUpperCase() + '</p></div></div>').join('') + '</section></div>';
     },
   });
@@ -264,12 +264,12 @@
 
   /* ---------- Контакты ---------- */
   OS.apps.register({
-    id: 'contact', pos: [94.4, 11.4], title: 'Контакты', label: 'контакты', note: 'напиши мне', art: 'assets/art/folders/contact.webp', tab: 'long', tilt: 1,
+    id: 'contact', pos: [94.4, 11.4], title: 'Контакты', label: 'контакты', note: 'почта, telegram', art: 'assets/art/folders/contact.webp', tab: 'long', tilt: 1,
     skin: 'white', size: { w: 560, h: 440 },
     render(body) {
       const o = D.owner;
-      body.innerHTML = '<div class="ab">' + head('контакты', 'Напишите', 'мне') +
-        '<p class="sh-text">Рассматриваю позиции backend-разработчика. Пишите в Telegram или на почту, отвечу быстро.</p>' +
+      body.innerHTML = '<div class="ab">' + head('контакты', 'Как', 'связаться') +
+        '<p class="sh-text">Рассматриваю предложения о работе в роли backend-разработчика. Связаться со мной можно через Telegram или по электронной почте.</p>' +
         '<ul class="sh-contacts type">' +
           '<li><span>[telegram]</span><a href="https://t.me/' + o.telegram + '" target="_blank" rel="noopener">@' + esc(o.telegram) + '</a></li>' +
           '<li><span>[e-mail]</span><a href="mailto:' + o.email + '">' + esc(o.email) + '</a></li>' +
