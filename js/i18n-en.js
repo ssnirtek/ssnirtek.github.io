@@ -358,7 +358,8 @@
  "пуста": "is empty",
  "Ярлык нельзя удалить": "A shortcut cannot be deleted",
  "Эту папку нельзя удалить": "This folder cannot be deleted",
- "почта, telegram": "e-mail, Telegram"
+ "почта, telegram": "e-mail, Telegram",
+ "Настройка ИИ-ассистентов под рабочие задачи: инструкции, формат ответов. Подбор запросов (промптов), проверка и доработка результата.": "Setting up AI assistants for work tasks: instructions, answer format. Choosing prompts, checking and improving the result."
 });
   OS.i18n.translateData();
 })();
