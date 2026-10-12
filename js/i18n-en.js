@@ -359,7 +359,11 @@
  "Ярлык нельзя удалить": "A shortcut cannot be deleted",
  "Эту папку нельзя удалить": "This folder cannot be deleted",
  "почта, telegram": "e-mail, Telegram",
- "Настройка ИИ-ассистентов под рабочие задачи: инструкции, формат ответов. Подбор запросов (промптов), проверка и доработка результата.": "Setting up AI assistants for work tasks: instructions, answer format. Choosing prompts, checking and improving the result."
+ "Настройка ИИ-ассистентов под рабочие задачи: инструкции, формат ответов. Подбор запросов (промптов), проверка и доработка результата.": "Setting up AI assistants for work tasks: instructions, answer format. Choosing prompts, checking and improving the result.",
+ "авг. – окт. 2026": "Aug – Oct 2026",
+ "Специалист голосовой поддержки клиентов, Яндекс Еда": "Voice customer support specialist, Yandex Eda",
+ "Обработка обращений по заказам: жалобы, возвраты и компенсации, взаимодействие с курьерами и ресторанами. 100–150 обращений за смену, работа во внутренних системах, CRM и базе знаний. Премия в максимальном размере.": "Handling order-related requests: complaints, refunds and compensation, communication with couriers and restaurants. 100–150 requests per shift, working in internal systems, a CRM and a knowledge base. Bonus at the maximum rate.",
+ "Оператор голосовой поддержки клиентов, Яндекс Еда": "Voice customer support operator, Yandex Eda"
 });
   OS.i18n.translateData();
 })();

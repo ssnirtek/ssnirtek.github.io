@@ -22,7 +22,7 @@
     render(body) {
       const o = D.owner;
       const jobs = D.experience.slice(0, 3).concat([['2021 – 2025', 'ВкусВилл, сборщик заказов; контент-менеджер магазина']]);
-      const edu = D.experience[4];
+      const edu = D.experience[D.experience.length - 1];
       const right = [
         [edu[0], edu[1], edu[2]],
         ['2026', 'Диплом: Bijouterie.ss', 'Интернет-магазин на Yii2, 10 таблиц, 96 проверок'],
