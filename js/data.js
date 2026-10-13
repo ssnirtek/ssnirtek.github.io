@@ -122,8 +122,7 @@ OS.data = {
     { img: 'assets/works/w7.jpg', title: 'Bijouterie.ss', sub: 'дипломный сайт', open: 'bijouterie' },
     { img: 'assets/works/w8.jpg', title: 'Plant', sub: 'дизайн сайта', open: 'fg-plant' },
     { img: 'assets/works/w9.jpg', title: 'Antonio', sub: 'дизайн сайта', open: 'fg-restaurant' },
-    { img: 'assets/works/w10.jpg', title: 'Foliage', sub: 'афиша выставки', open: 'fg-foliage' },
-    { img: 'assets/works/w11.jpg', title: 'Rare plant shop', sub: 'обложка проекта', open: 'fg-rare' },
+    { img: 'assets/works/w10.jpg', title: 'Постеры', sub: 'серия афиш', open: 'fg-posters' },
   ],
 
   figma: [
@@ -140,12 +139,9 @@ OS.data = {
       sub: 'Учебный проект · сайт итальянского ресторана',
       stack: ['Figma', 'десктоп', 'мобильная версия', 'фирменный стиль'],
       text: 'Логотип и фирменный стиль, сайт ресторана (главная, меню, галерея атмосферы, бронирование, контакты), мобильная версия, набор кнопок и три цветовых варианта.', shots: 9 },
-    { id: 'fg-foliage', dir: 'foliage', title: 'Foliage', label: 'foliage', note: 'афиша', art: 'assets/art/p-stars.webp', tab: 'long',
-      sub: 'Учебный проект · афиша выставки растений', stack: ['Figma', 'печатный макет A4', 'типографика', 'коллаж'],
-      text: 'Афиша выставки редких и экзотических растений формата A4: растровая печать, градиентный фон, цветочный коллаж и акцидентный шрифт.', shots: 1 },
-    { id: 'fg-rare', dir: 'rare', title: 'Rare plant shop', label: 'rare plants', note: 'обложка', art: 'assets/art/p-lamb.webp', tab: 'right',
-      sub: 'Учебный проект · обложка проекта магазина редких растений', stack: ['Figma', 'обложка', 'типографика', 'коллаж'],
-      text: 'Обложка проекта сайта магазина редких растений: фотография луга, растровые силуэты маков на розовом фоне и крупный заголовок.', shots: 1 },
+    { id: 'fg-posters', dir: 'posters', title: 'Постеры', label: 'postery', note: 'серия', art: 'assets/art/p-poster.webp', tab: 'long',
+      sub: 'Учебный проект · серия плакатов и афиш', stack: ['Figma', 'печатный макет A4', 'коллаж', 'дуотон'],
+      text: 'Серия учебных плакатов: афиша выставки редких и экзотических растений, обложка проекта «Rare plant shop» и афиша мероприятия «Wool. Milk. Butter.» — растровая печать, коллаж и дуотон.', shots: 3 },
   ],
 
   perfume: {
